@@ -230,4 +230,7 @@ watch(status, () => {
     border: 1px solid red !important;
 }
 .start { align-items: flex-start; }
+form {
+    background: var(--background);
+}
 </style>
