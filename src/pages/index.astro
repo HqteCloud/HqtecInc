@@ -7,7 +7,10 @@ import Services from '@components/Services/index.astro'
 	title: 'Hqtec Inc -  Expert technology consulting, installation, maintenance and support.',
 	description: 'Hqtec In provides expert technology consulting, installation, maintenance and support all over the United States ensuring a strategic advantage for our clients.'
 }}>
-	<h1 class="hero">HQTECH INC</h1>
+	<!-- <h1 class="hero">HQTECH INC</h1> -->
+	<div class="align-center image">
+		<img src="/img/04.webp" alt="">
+	</div>
 	<section class="section-1 align-center">
 		<div class="container max-width">
 			<div class="box">
@@ -49,6 +52,13 @@ import Services from '@components/Services/index.astro'
 @import "../styles/global.styles.scss";
 @import "../styles/breakpoints.scss";
 
+.image {
+	img {
+		width: 100%;
+		height: 360px;
+		object-fit: cover;
+	}
+}
 .section-1 {
 	border-top: 1px solid var(--border);
 	.container {

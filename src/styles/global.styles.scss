@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
 @import "./breakpoints.scss";
 /*
     Register our custom font family and
@@ -51,11 +52,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: clamp(2.5em, 30vw, 26.563em); font-family: 'Burbank', sans-serif;
+    font-size: clamp(2.5em, 30vw, 26.563em);
+    font-family: 'Burbank', sans-serif;
     font-weight: 700;
-    &.content-heading { font-size: 3.375em; font-weight: 700;}
+    &.content-heading {
+        font-size: 3.375em;
+        font-weight: 700;
+        font-family: 'Josefin Sans', sans-serif;
+    }
     &.hero {
-        -webkit-text-stroke: 0.05em; display: flex;
+        -webkit-text-stroke: 0.05em;
+        display: flex;
         white-space: nowrap; overflow-x: clip;
         justify-content: center;
         margin: 0.3em 0;
