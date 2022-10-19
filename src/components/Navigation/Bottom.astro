@@ -1,0 +1,86 @@
+---
+const links = await Astro.glob('../../assets/*.json')
+---
+
+<div class="align-center">
+    <div class="between max-width">
+        <ul>
+            <li><a href="/" class={ Astro.url.pathname === '/' ? "active" : '' }>Home</a>&nbsp;/&nbsp;</li>
+            <li><a href="/services" class={ Astro.url.pathname === '/services' ? "active" : '' }>services</a>&nbsp;/&nbsp;</li>
+            <li><a href="/about-us" class={ Astro.url.pathname === '/about-us' ? "active" : '' }>about Us</a>&nbsp;/&nbsp;</li>
+            <li><a href="/contact-us" class={ Astro.url.pathname === '/contact-us' ? "active" : '' }>contact Us</a></li>
+        </ul>
+        <div class="secondary" id="secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" id="left" class="off" onclick="scrollHorizontally(false)" width="9.168" height="16.035" viewBox="0 0 9.168 16.035">
+                <path id="Icon_ionic-ios-arrow-forward" data-name="Icon ionic-ios-arrow-forward" d="M14.01,14.211l6.068-6.063a1.141,1.141,0,0,0,0-1.618,1.156,1.156,0,0,0-1.623,0L11.58,13.4a1.144,1.144,0,0,0-.033,1.58l6.9,6.918a1.146,1.146,0,0,0,1.623-1.618Z" transform="translate(-11.246 -6.196)"/>
+          </svg>              
+            <ul id="menu">
+              {links.map((item) => (
+                <li><a href={'/' + item.path} class={
+                    Astro.url.pathname === '/' + item.path ? "active" : ''
+                    }>{ item.title }
+                </a></li>
+                ))}  
+            </ul>
+            <svg xmlns="http://www.w3.org/2000/svg" id="right" onclick="scrollHorizontally(true)" width="9.169" height="16.036" viewBox="0 0 9.169 16.036">
+                <path id="Icon_ionic-ios-arrow-forward" data-name="Icon ionic-ios-arrow-forward" d="M17.651,14.211,11.583,8.148a1.141,1.141,0,0,1,0-1.618,1.156,1.156,0,0,1,1.623,0l6.875,6.87a1.144,1.144,0,0,1,.033,1.58l-6.9,6.918a1.146,1.146,0,0,1-1.623-1.618Z" transform="translate(-11.246 -6.196)"/>
+              </svg>              
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+const parent = document.getElementById('secondary');
+const secondary_menu = parent.children.namedItem("menu");
+const button_left = parent.children.namedItem("left");
+
+const scrollHorizontally = (direction) => {
+    if(!direction === true) {
+        secondary_menu.scrollLeft -= 250;
+        if (secondary_menu.scrollLeft < 100) button_left.classList.add("off");
+        return
+    }
+    secondary_menu.scrollLeft += 250;
+    button_left.classList.remove("off")
+}
+</script>
+
+<style lang="scss">
+@import "../../styles/global.styles.scss";
+@import "../../styles/breakpoints.scss";
+ul {
+    display: flex;
+    align-items: center;
+    li { color: var(--brand-light) }
+}
+.secondary {
+    display: grid; grid-template-columns: .5em 1fr .5em;
+    grid-column-gap: .5em; list-style-type: none;
+    ul {
+        max-width: 100%; overflow-x: hidden;
+        white-space: nowrap; display: flex;
+        align-items: center; scroll-behavior: smooth;
+        li { margin-right: 1.4em; }
+    }
+    svg {
+        fill: var(--base);
+        &:hover { cursor: pointer; }
+    }
+}
+.align-center {
+    display: none !important;
+    .between {
+        border-top: 1px solid var(--border);
+        // border-bottom: 1px solid $border;
+
+        padding: 1.625em $gap;
+        display: grid;
+        grid-template-columns: 290px 1fr;
+        grid-column-gap: $gap-large;
+
+        @include tablet {  }
+    }
+    @include tablet { display: flex !important; }
+}
+.off { visibility: hidden; }
+</style>

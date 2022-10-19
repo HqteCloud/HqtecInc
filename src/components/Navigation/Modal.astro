@@ -1,0 +1,67 @@
+---
+import Toggle from './toggle.astro';
+const links = await Astro.glob('../../assets/*.json')
+const pages = [
+    {
+        "url": "/",
+        "name": "Home"
+    },
+    {
+        "url": "/about-us",
+        "name": "About"
+    },
+    {
+        "url": "/services",
+        "name": "Services"
+    },
+    {
+        "url": "/contact-us",
+        "name": "Contact Us"
+    }
+]
+---
+
+<div class="container align-center" id="modal">
+    <div class="max-width">
+        <ul>
+            {pages.map((item) => (
+                <li><a href={item.url} class={
+                    Astro.url.pathname === item.url ? "active" : ''
+                }>{item.name}</a></li>
+            ))}
+        </ul>
+        <div>
+            <h2><b>Services</b></h2>
+            <ul>
+                {links.map((item) => (
+                    <li><a href={item.path} class={
+                    Astro.url.pathname === '/' + item.path ? "active" : ''
+                    }>{item.title}</a></li>
+                ))}
+            </ul>
+        </div>
+        <div class="max-width"><Toggle /></div>
+    </div>
+</div>
+
+<style lang="scss">
+@import "../../styles/global.styles.scss";
+@import "../../styles/breakpoints.scss";
+.max-width {
+    margin: $gap;
+    ul {
+        display: grid;
+        grid-row-gap: 1em;
+    }
+    div {
+        h2 { margin-top: 1.5em; margin-bottom: .5em}
+    }
+}
+.container {
+    overflow-y: hidden; height: 0px;
+    transition: height .5s;
+    &.increase-height { height: 570px; }
+    @include tablet { display: none !important; }
+}
+
+</style>

@@ -1,0 +1,68 @@
+{
+    "path": "break-fix-services",
+    "title": "Break-fix & Genetal Services",
+
+    "content": {
+        "description": "Our team will dispatch a qualified technician 24 | 7 | 365 and manage the completion of each service event from order entry through to the technician's departure from the site anywhere within the United States.",
+        "services": [
+            "VE1 After Hours Response",
+            "4 Hour Response",
+            "24 Hour Response",
+            "48 Hour Response"
+        ]
+    },
+
+    "form": {
+        "checkbox": [],
+        "fields": [
+            {
+                "type": "text",
+                "field": "Occupation Title",
+                "placeholder": "Occupation Title",
+                "extra": "What position do you hold at the organization you are representative?"
+            },
+            {
+                "type": "text",
+                "field": "Organization",
+                "placeholder": "Organization",
+                "extra": "What is the name of your company?"
+            },
+            {
+                "type": "textarea",
+                "field": "Address",
+                "placeholder": "Address",
+                "extra": "Where is our starting point located?"
+            },
+            {
+                "type": "group",
+                "fields": [
+                    {
+                        "type": "text",
+                        "field": "City",
+                        "placeholder": "City",
+                        "extra": ""
+                    },
+                    {
+                        "type": "text",
+                        "field": "State/Province",
+                        "placeholder": "State/Province",
+                        "extra": ""
+                    },
+                    {
+                        "type": "text",
+                        "field": "Zip/Postal Code",
+                        "placeholder": "Zip/Postal Code",
+                        "extra": ""
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "field": "Country",
+                "placeholder": "Country",
+                "extra": ""
+            }
+        ]
+    }
+    
+}

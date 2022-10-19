@@ -1,0 +1,37 @@
+{
+    "path": "preventative-maintenance",
+    "title": "Preventative Maintenance",
+
+    "content": {
+        "description": "In recent years many clients have found a significant ROI from preventative maintenance programs.  By ensuring the equipment is clean and clear of all dust and debris, able to properly vent to cool properly, and connected to surge protection they see an extension by as much as 25% to the equipment’s typical life cycle.",
+        "services": [
+            "IT Health Check & Cleaning",
+            "Site Standardization",
+            "PCI Compliance Audits"
+        ]
+    },
+
+    "form": {
+        "checkbox": [
+            "IT Health Check & Cleaning",
+            "Site Standardization",
+            "PCI Compliance Audits",
+            "Other (specify in message box)"
+        ],
+        "fields": [
+            {
+                "type": "text",
+                "field": "Occupation Title",
+                "placeholder": "Occupation Title",
+                "extra": "What position do you hold at the organization you are representative?"
+            },
+            {
+                "type": "text",
+                "field": "Organization",
+                "placeholder": "Organization",
+                "extra": "What is the name of your company?"
+            }
+        ]
+    }
+    
+}

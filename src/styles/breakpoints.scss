@@ -1,0 +1,35 @@
+$small: 480px;
+$tablet: 760px;
+$tablet-landscape: 980px;
+$desktop-small: 1023px;
+$desktop: 1200px;
+
+@mixin mb-landscape {
+    @media (min-width: $small) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) { 
+        @content;
+    }
+}
+
+@mixin lg-tablet {
+    @media (min-width: $tablet-landscape) and (orientation : landscape) {
+        @content;
+    }
+}
+
+@mixin sm-desktop {
+    @media (min-width: $desktop-small) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $desktop) {
+        @content;
+    }
+}

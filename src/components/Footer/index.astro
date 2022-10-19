@@ -1,0 +1,97 @@
+---
+const links = await Astro.glob('../../assets/*.json')
+const pages = [
+    {
+        "url": "/",
+        "name": "Home"
+    },
+    {
+        "url": "/about-us",
+        "name": "About"
+    },
+    {
+        "url": "/services",
+        "name": "Services"
+    },
+    {
+        "url": "/contact-us",
+        "name": "Contact Us"
+    }
+]
+---
+<footer class="footer align-center">
+    <div class="container max-width">
+        <div class="links">
+            <div>
+                <h2>Services</h2>
+                <ul>
+                    {links.map(({ path, title }) => (
+                        <li><a href={path} class={
+                    Astro.url.pathname === '/' + path ? "active" : ''
+                    }>{title}</a></li>
+                    ))}
+                </ul>
+            </div>
+            <div>
+                <h2>Pages</h2>
+                <ul>
+                    {pages.map((item) => (
+                        <li><a href={item.url} class={
+                    Astro.url.pathname === item.url ? "active" : ''
+                    }>{item.name}</a></li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+        <div class="bottom">
+            <h2>Hqtech Inc</h2>
+            <h2>Formerly Jeremi Technologies</h2>
+        </div>
+    </div>
+</footer>
+
+<script is:inline>
+const observer = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		const intersecting = entry.isIntersecting;
+		intersecting ? document.documentElement.setAttribute('data-theme', 'dark') : document.documentElement.setAttribute('data-theme', 'light');
+	})
+},{ threshold: .2 })
+observer.observe(document.querySelector(".footer"));
+</script>
+
+<style lang="scss">
+@import "../../styles/global.styles.scss";
+@import "../../styles/breakpoints.scss";
+
+h2 {font-weight: 900 !important;}
+ul {
+    display: grid;
+    grid-row-gap: .5em;
+}
+.container {
+    margin: $gap;
+    .links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 240px);
+        align-items: flex-end;
+
+        div {
+            h2 { margin-bottom: 1em; }
+            &:last-child { margin-top: $gap;border: 0; }
+            @include tablet {
+                border-right: 1px solid var(--border);
+                &:last-child { margin-left: $gap; }
+            }
+        }
+    }
+    .bottom {
+        display: flex; padding-top: $gap;
+        border-top: 1px solid var(--border); flex-wrap: wrap; margin-top: $gap;
+        justify-content: space-between;
+    }
+}
+footer {
+    border-top: 1px solid var(--border);
+}
+</style>

@@ -1,0 +1,51 @@
+---
+import Toggle from './toggle.astro'
+---
+<div class="root align-center">
+   <div class="max-width">
+        <a href="/"><img src="/logo.svg" alt="website logo" width="86" /></a>
+        <Toggle />
+        <button id="toggle-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15.818" height="9.366" viewBox="0 0 15.818 9.366">
+                <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(0.5 0.5)" opacity="0.69">
+                  <path id="Path_9" data-name="Path 9" d="M4.5,18H19.318" transform="translate(-4.5 -13.817)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                  <path id="Path_10" data-name="Path 10" d="M4.5,9H19.318" transform="translate(-4.5 -9)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                  <path id="Path_11" data-name="Path 11" d="M4.5,27H19.318" transform="translate(-4.5 -18.634)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                </g>
+              </svg>              
+        </button>
+    </div> 
+</div>
+
+<script is:inline>
+const btn = document.getElementById('toggle-button');
+btn.addEventListener('click', () => {
+    const modal = document.getElementById('modal');
+    if (modal.classList.contains('increase-height')) {
+        modal.classList.remove('increase-height'); return
+    }
+    modal.classList.add('increase-height')
+})
+</script>
+
+<style lang="scss">
+@import "../../styles/global.styles.scss";
+@import "../../styles/breakpoints.scss";
+    .root {
+        .max-width {
+            margin: 1.475em $gap;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        border-bottom: 1px solid var(--border);
+        @include tablet { border: none; }
+        path { stroke: var(--base); }
+    }
+    button {
+        padding: 1em !important;
+        min-width: auto !important;
+
+        @include tablet { display: none; }
+    }
+</style>

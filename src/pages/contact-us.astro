@@ -1,0 +1,114 @@
+---
+import DefaultWrapper from '@layouts/default.astro'
+---
+<DefaultWrapper SEO={{
+    title: 'Contact Us - Hqtec Inc',
+    description: 'Hqtec Inc looks forward to opening dialog with you. Let us know if you have any questions about projects, services, or pricing.'
+}}>
+    <section class="section-1 align-center">
+        <div class="max-width">
+            <div class="container grid-item">
+                <div class="box">
+                    <div>
+                        <h2>Making it click!</h2>
+                        <p>Hqtech Inc provides expert technology consulting, installation, maintenance and support all over the United States. We work with corporations to build and maintain excellent technical infrastructure.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <h2>Contact Us</h2>
+                        <p>Hqtech Inc looks forward to opening dialog with you. Let us know if you have any questions about projects, services, or pricing. Please allow up to 48 hours for a response.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div>
+                        <h2>Our Office</h2>
+                        <p>Phone: <a href="tel:(219)961-8222">(219)961-8222</a><br>
+                            Email: <a href="mailto:info@jeremitechnologysolutions.com">info@jeremitechnologysolutions.com</a><br><br>
+                            
+                            1544 45th Avenue
+                            Munster, IN, 46321
+                            United States
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <form>
+                    <div class="group">
+                        <h3>Name *</h3>
+                        <div class="wrapper">
+                            <div class="input-box">
+                                <label for="firstName">First Name</label>
+                                <input type="text">
+                                <p></p>
+                            </div>
+                            <div class="input-box">
+                                <label for="lastName">Last Name</label>
+                                <input type="text">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="Email">Email Address *</label>
+                        <input type="email">
+                        <p></p>
+                    </div>
+                    <div class="input-box">
+                        <label for="messageSubject">Subject *</label>
+                        <input type="text">
+                        <p></p>
+                    </div>
+                    <div class="input-box">
+                        <label for="textArea">Message *</label>
+                        <textarea></textarea>
+                        <p></p>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="grid-item waste"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.4577263992064!2d-87.49311748515552!3d41.537685594628215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8811e0fcc81ee719%3A0x31c7e4fd5ce12486!2s1544%2045th%20Ave%2C%20Munster%2C%20IN%2046321%2C%20USA!5e0!3m2!1sen!2sng!4v1665974923801!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+    </section>
+        
+</DefaultWrapper>
+
+<style lang="scss">
+@import "../styles/global.styles.scss";
+@import "../styles/breakpoints.scss";
+
+.section-1 {
+	.max-width {
+        border-top: 1px solid var(--border);
+        display: grid; grid-column-gap: 2em;
+        .container {
+            display: grid;
+            .box {
+                border-bottom: 1px solid var(--border);
+                div {
+                    margin: $gap;
+                    @include tablet { margin: $gap; margin-left: 0;}
+                }
+                @include tablet {border: 0;}
+            }
+            
+            @include tablet { margin: 0 $gap; }
+        }
+        .grid-item {
+            &:nth-child(even) {
+                @include tablet {
+                    border-right: 1px solid var(--border);
+                    border-left: 1px solid var(--border);
+                }
+            }
+            &.waste {
+                background: var(--base-strong);
+                iframe { width: 100%; height: 100%; object-fit: cover; border: 0; min-height: 300px;}
+            }
+        }
+        @include tablet {grid-template-columns: 2fr 2fr 0fr;}
+        @include lg-tablet {grid-template-columns: 2fr 2fr 1fr;}
+    }
+}
+</style>

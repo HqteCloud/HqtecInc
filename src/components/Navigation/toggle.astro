@@ -1,0 +1,65 @@
+---
+
+---
+<div class="toggle" id="toggle" onclick="toggle()">
+    <div class="drop" name="drop"></div>
+</div>
+
+<script is:inline>
+//identify the toggle switch HTML element
+var toggleSwitch = document.getElementById('toggle');
+var isToggled = false;
+function toggle () {
+    if (isToggled) {
+        toggleSwitch.classList.remove('background');
+        toggleSwitch.children.namedItem('drop').classList.remove('translate-right')
+        isToggled = false; localStorage.setItem('theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'light');
+        return
+    }
+    toggleSwitch.classList.add('background');
+    toggleSwitch.children.namedItem('drop').classList.add('translate-right')
+    isToggled = true;
+    localStorage.setItem('theme', 'dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+</script>
+
+<style lang="scss">
+@import "../../styles/global.styles.scss";
+@import "../../styles/breakpoints.scss";
+    .toggle {
+        min-height: 20px;
+
+        width: 3.5em;
+        border-radius: 20em;
+
+        display: none;
+        align-items: center;
+        justify-content: flex-start;
+
+        border: 1px solid black;
+        background: var(--base-strong);
+
+        scroll-behavior: smooth;
+        
+        &:hover { cursor: pointer; }
+
+        .drop {
+            width: 1.5em;
+            height: 1.5em;
+            margin: .4em;
+
+            border-radius: 20em;
+            background: var(--background);
+            transition: all .5s;
+        }
+
+        @include tablet { display: flex; }
+    }
+    .background {
+        background: var(--base);
+    }
+    .translate-right { transform: translateX(1.35em); }
+</style>

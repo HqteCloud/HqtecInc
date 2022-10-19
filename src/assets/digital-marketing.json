@@ -1,0 +1,43 @@
+{
+    "path": "digital-marketing",
+    "title": "Digital Marketing",
+
+    "content": {
+        "description": "HqtecInc understands the importance of establishing a digital presence features streamlined consulting for basic internet needs. Our digital marketing strategy consists of mapping a series of micro-conversions that turn leads into macro conversions for your business. Here are some services that we build and maintain:",
+        "services": [
+            "Integrated Digital Marketing Campaigns",
+            "Email Marketing",
+            "Social Media Marketing",
+            "Web Design",
+            "Google Adwords/Analytics",
+            "SEO Audits"
+        ]
+    },
+
+    "form": {
+        "checkbox": [
+            "Integrated Digital Marketing Campaigns",
+            "Email Marketing",
+            "Social Media Marketing",
+            "Web Design",
+            "Google Adwords/Analytics",
+            "SEO Audits",
+            "Other (specify in message box)"
+        ],
+        "fields": [
+            {
+                "type": "text",
+                "field": "Job Title",
+                "placeholder": "Occupation Title",
+                "extra": ""
+            },
+            {
+                "type": "text",
+                "field": "Organization",
+                "placeholder": "Organization",
+                "extra": "What is the name of your company?"
+            }
+        ]
+    }
+    
+}

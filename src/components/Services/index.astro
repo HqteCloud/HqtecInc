@@ -1,0 +1,56 @@
+---
+const services = await Astro.glob('../../assets/*.json')
+---
+
+<div class="container max-width">
+    {services.map((item) => (
+        <article>
+            <div>
+                <p>{ services.indexOf(item) + 1 }</p>
+                <a class="box" href={item.path}>
+                    <h2>{ item.title }</h2>
+                </a>
+            </div>
+            
+        </article>
+    ))}  
+</div>
+
+<style lang="scss">
+@import "../../styles/global.styles.scss";
+@import "../../styles/breakpoints.scss";
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+
+    article {
+        height: 145.5px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+
+        div {
+            width: 100%;
+            margin: 0 $gap;
+            @include mb-landscape {
+              max-width: 276px;
+              margin: 0;
+            }
+        }
+        &:nth-child(3n+2){
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+        
+        @include tablet {
+            height: 225.5px;
+        }
+    }
+
+    @include mb-landscape {
+        grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
+    }
+}
+</style>

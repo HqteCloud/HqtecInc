@@ -1,0 +1,90 @@
+{
+    "path": "project-deployments",
+    "title": "Project Deployments",
+
+    "content": {
+        "description": "HqtecInc is able to manage projects of all sizes. We recognize the many logistical challenges executing a project. Our site survey process isolates variables and helps minimize surprises during installation. Our methods guarantee that each step is taken to alleviate the risk of  interference to our clients' employees and customers.",
+        "services": [
+            "Low Voltage Cabling",
+            "Demarc Extensions",
+            "CCTV Installations",
+            "Infrastructure | Network Moves Adds Changes (MACs)",
+            "Data / Server Cabinet Clean Ups",
+            "Point Of Sale | Peripheral Replacement",
+            "Digital Signage",
+            "POP Marketing Campaigns",
+            "Software | Hardware Upgrades",
+            "Wi-Fi Surveys | Installations",
+            "Site Surveys",
+            "PCI Compliance Upgrades"
+        ]
+    },
+
+    "form": {
+        "checkbox": [
+            "Low Voltage Cabling",
+            "Demarc Extensions",
+            "CCTV Installations",
+            "Infrastructure | Network Moves Adds Changes (MACs)",
+            "Data / Server Cabinet Clean Ups",
+            "Point Of Sale | Peripheral Replacement",
+            "Digital Signage",
+            "POP Marketing Campaigns",
+            "Software | Hardware Upgrades",
+            "Wi-Fi Surveys | Installations",
+            "Site Surveys",
+            "PCI Compliance Upgrades",
+            "Other (specify in message box)"
+        ],
+        "fields": [
+            {
+                "type": "text",
+                "field": "Job Title",
+                "placeholder": "Job Title",
+                "extra": ""
+            },
+            {
+                "type": "text",
+                "field": "Organization",
+                "placeholder": "Organization",
+                "extra": "What is the name of your company?"
+            },
+            {
+                "type": "textarea",
+                "field": "Address",
+                "placeholder": "Address",
+                "extra": "Where will we begin this project?"
+            },
+            {
+                "type": "group",
+                "fields": [
+                    {
+                        "type": "text",
+                        "field": "City",
+                        "placeholder": "City",
+                        "extra": ""
+                    },
+                    {
+                        "type": "text",
+                        "field": "State/Province",
+                        "placeholder": "State/Province",
+                        "extra": ""
+                    },
+                    {
+                        "type": "text",
+                        "field": "Zip/Postal Code",
+                        "placeholder": "Zip/Postal Code",
+                        "extra": ""
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "field": "Country",
+                "placeholder": "Country",
+                "extra": ""
+            }
+        ]
+    }
+    
+}
