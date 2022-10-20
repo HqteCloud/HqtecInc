@@ -17,8 +17,8 @@ const { title, content, form } = Astro.props
 ---
 
 <DefaultWrapper SEO={{
-    title: title,
-    description: content.description
+    title: title.substring(0, 150) + '...',
+    description: content.description.substring(0, 150) + '...'
 }}>
 	<section class="section-1 align-center">
         <div class="container max-width">
@@ -56,7 +56,7 @@ const { title, content, form } = Astro.props
     <section class="section-3 align-center" id="getstarted">
         <div class="container max-width">
             <header>
-                <h1 class="content-heading">Apply for {title}</h1>
+                <h2 class="content-heading">Apply for {title}</h2>
                 <p>Thank you for considering a relationship with Jeremi Technology Solutions for general services. Please fill out the spaces below and provide a detailed description of what you would like to accomplish. Additionally, you can use the message box for any questions or concerns you may have about projects, services, and pricing. Please allow up to 48 hours for a response.</p>
                 <ReachoutForm client:only="vue" form={form} />
             </header>

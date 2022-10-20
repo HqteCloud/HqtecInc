@@ -1,14 +1,15 @@
 ---
-const links = await Astro.glob('../../assets/*.json')
+const links = await Astro.glob('../../assets/*.json');
+const pathname = Astro.url.pathname;
 ---
 
 <div class="align-center">
     <div class="between max-width">
         <ul>
-            <li><a href="/" class={ Astro.url.pathname === '/' ? "active" : '' }>Home</a>&nbsp;/&nbsp;</li>
-            <li><a href="/services" class={ Astro.url.pathname === '/services' ? "active" : '' }>services</a>&nbsp;/&nbsp;</li>
-            <li><a href="/about-us" class={ Astro.url.pathname === '/about-us' ? "active" : '' }>about Us</a>&nbsp;/&nbsp;</li>
-            <li><a href="/contact-us" class={ Astro.url.pathname === '/contact-us' ? "active" : '' }>contact Us</a></li>
+            <li><a href="/" class={ pathname === '/' ? "active" : '' }>Home</a>&nbsp;/&nbsp;</li>
+            <li><a href="/services" class={ pathname === '/services' ? "active" : '' }>services</a>&nbsp;/&nbsp;</li>
+            <li><a href="/about-us" class={ pathname === '/about-us' ? "active" : '' }>about Us</a>&nbsp;/&nbsp;</li>
+            <li><a href="/contact-us" class={ pathname === '/contact-us' ? "active" : '' }>contact Us</a></li>
         </ul>
         <div class="secondary" id="secondary">
             <svg xmlns="http://www.w3.org/2000/svg" id="left" class="off" onclick="scrollHorizontally(false)" width="9.168" height="16.035" viewBox="0 0 9.168 16.035">
@@ -17,7 +18,7 @@ const links = await Astro.glob('../../assets/*.json')
             <ul id="menu">
               {links.map((item) => (
                 <li><a href={'/' + item.path} class={
-                    Astro.url.pathname === '/' + item.path ? "active" : ''
+                    pathname === '/' + item.path ? "active" : ''
                     }>{ item.title }
                 </a></li>
                 ))}  

@@ -4,8 +4,8 @@ import Services from '@components/Services/index.astro'
 ---
 
 <DefaultWrapper SEO={{
-	title: 'Hqtec Inc -  Expert technology consulting, installation, maintenance and support.',
-	description: 'Hqtec In provides expert technology consulting, installation, maintenance and support all over the United States ensuring a strategic advantage for our clients.'
+	title: 'Hqtec Inc -  Expert technology consulting, maintenance, & support.',
+	description: 'We provide expert technology consulting, installation, maintenance, & support all over the United States ensuring a strategic advantage for our clients.'
 }}>
 	<!-- <h1 class="hero">HQTECH INC</h1> -->
 	<div class="align-center image">
@@ -39,7 +39,7 @@ import Services from '@components/Services/index.astro'
 	<section class="section-4 align-center">
 		<div class="max-width">
 			<div>
-				<h1 class="content-heading">ABOUT US</h1>
+				<h2 class="about-us">ABOUT US</h2>
 				<p>HqtecInc provides expert technology consulting, installation, maintenance and support all over the United States. We work with corporations to build and maintain excellent technical infrastructure. Our seasoned field technicians specialize in cabling, point-of-sale, computer hardware & software installations, CCTV alarm system setup, and more.</p>
 				<a href="/about-us">More about us</a>
 			</div>
@@ -52,6 +52,11 @@ import Services from '@components/Services/index.astro'
 @import "../styles/global.styles.scss";
 @import "../styles/breakpoints.scss";
 
+.about-us {
+	font-size: 3.375em;
+	font-weight: 700;
+	font-family: 'Josefin Sans', sans-serif;
+}
 .image {
 	img {
 		width: 100%;

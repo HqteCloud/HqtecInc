@@ -1,10 +1,11 @@
 ---
 import DefaultWrapper from '@layouts/default.astro'
+const description = 'We work with corporations to build and maintain excellent technical infrastructure, with our seasoned field technicians specializing in cabling, computer hardware & software installations, CCTV alarm system setup, and more.'
 ---
 
 <DefaultWrapper SEO={{
-	title: 'About Us - Seasoned field technicians and excellent technical infrastructure.',
-	description: 'Hqtech Inc provides expert technology consulting, installation, maintenance and support all over the United States. We work with corporations to build and maintain excellent technical infrastructure. Our seasoned field technicians specialize in cabling, point-of-sale, computer hardware & software installations, CCTV alarm system setup, and more.',
+	title: 'About Us - computer hardware & software installations, CCTV alarm system setup, and more.',
+	description: description.substring(0, 150) + '...',
 }}>
 	<img src="/img/01.webp" alt="" class="hero-img">
 	<section class="section-1 align-center">
