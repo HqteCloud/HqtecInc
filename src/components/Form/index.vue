@@ -103,10 +103,15 @@ watch(status, () => {
     }, 2000)
 })
 
+const pathname = document.location.pathname;
+console.log(document.location.pathname)
+
 </script>
 
 <template>
-  <div class="button-group"><a class="button" href="javascript:0" @click="open = true">Get Started</a></div>
+  <div class="button-group" v-if="pathname !== '/hqtec-cloud'">
+    <a class="button" href="javascript:0" @click="open = true">Get Started</a>
+  </div>
 
   <Teleport to="body">
     <div v-if="open" class="modal align-center" :class="{ start: status === false }">
