@@ -193,7 +193,7 @@ watch(status, () => {
     overflow-y: auto;
     .body {
         background: var(--background);
-        margin: $gap 1.3em; width: 100%;
+        margin: $gap .5em; width: 100%;
         min-height: 80%; border: 1px solid var(--border);
         border-radius: $radius; max-width: 800px;
         .content {

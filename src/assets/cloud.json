@@ -1,9 +1,10 @@
 {
     "path": "hqtec-cloud",
-    "title": "HqtecInc Cloud",
+    "title": "Hqtec Cloud",
+    "img": "/img/25.jpg",
 
     "content": {
-        "description": "HqtecIncCloud LTD is a comprehensive cloud services technology company, offering SaaS, PaaS, IaaS and DaaS in the form of software, data storage, databases, servers, networks, computing and other services accessible on-demand though internet for our clientele.\nOur solutions span healthcare, education, financial, hospitality, production, automotive and real estate industries.\nOur services are focused on improving efficiency in business processes to improve scalability, flexibility and, ultimately, profitability.",
+        "description": "Hqtec Cloud LTD is a comprehensive cloud services technology company, offering SaaS, PaaS, IaaS and DaaS in the form of software, data storage, databases, servers, networks, computing and other services accessible on-demand though internet for our clientele.\nOur solutions span healthcare, education, financial, hospitality, production, automotive and real estate industries.\nOur services are focused on improving efficiency in business processes to improve scalability, flexibility and, ultimately, profitability.",
         "services": []
     },
 
