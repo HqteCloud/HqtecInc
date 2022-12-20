@@ -5,15 +5,15 @@ import ReachoutForm from '@components/Form/index.vue';
 
 export const getStaticPaths = async () => {
     const pages = await Astro.glob('../assets/*.json');
-    return pages.map(({ path, title, content, form }) => {
+    return pages.map(({ path, title, content, form, img }) => {
         return {
             params: { slug: path },
-            props: { title, content, form }
+            props: { title, content, form, img }
         };
     });
 }
 
-const { title, content, form } = Astro.props
+const { title, content, form, img } = Astro.props
 ---
 
 <DefaultWrapper SEO={{
@@ -33,7 +33,7 @@ const { title, content, form } = Astro.props
                 </div>
             </header>
             <div>
-                <img src="/img/02.webp" alt="">
+                <img src={img} alt="">
             </div>
         </div>
 	</section>
@@ -72,12 +72,16 @@ const { title, content, form } = Astro.props
 .section-1 {
     background: rgb(44, 44, 44);
     .container {
-        margin: $gap;  
-        div img {
+        margin: 1em;  
+        div > img {
             width: 100%;
-            min-height: 303px;
+            height: 403px;
             object-fit: cover;
+            object-position: top;
+            border-radius: 1em;
+            @include tablet { border-radius: 0; }
         }
+        
         @include tablet {
             display: grid; margin: 0 $gap;
             grid-template-columns: repeat(2, 1fr);
