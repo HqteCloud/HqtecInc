@@ -11,13 +11,13 @@ import DefaultWrapper from '@layouts/default.astro';
                 <div class="box">
                     <div>
                         <h2>Making it click!</h2>
-                        <p>Hqtech Inc provides expert technology consulting, installation, maintenance and support all over the United States. We work with corporations to build and maintain excellent technical infrastructure.</p>
+                        <p>HQ TEC, Inc provides expert technology consulting, installation, maintenance and support all over the United States. We work with corporations to build and maintain excellent technical infrastructure.</p>
                     </div>
                 </div>
                 <div class="box">
                     <div>
                         <h2>Contact Us</h2>
-                        <p>Hqtech Inc looks forward to opening dialog with you. Let us know if you have any questions about projects, services, or pricing. Please allow up to 48 hours for a response.</p>
+                        <p>HQ TEC, Inc looks forward to opening dialog with you. Let us know if you have any questions about projects, services, or pricing. Please allow up to 48 hours for a response.</p>
                     </div>
                 </div>
                 <div class="box">
@@ -229,5 +229,8 @@ contactForm.addEventListener('submit', (e) => {
         @include tablet {grid-template-columns: 2fr 2fr 0fr;}
         @include lg-tablet {grid-template-columns: 1fr 1fr 1fr;}
     }
+}
+form {
+    padding: $gap 1em;
 }
 </style>

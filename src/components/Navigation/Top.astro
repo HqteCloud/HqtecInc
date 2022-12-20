@@ -3,7 +3,7 @@ import Toggle from './toggle.astro'
 ---
 <div class="root align-center">
    <div class="max-width">
-        <a href="/" id="logo"><img src="/logo.png" alt="website logo" width="156" /></a>
+        <a href="/" id="logo"><img src="/logo.png" alt="website logo" width="256" /></a>
         <Toggle />
         <button id="toggle-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="15.818" height="9.366" viewBox="0 0 15.818 9.366">
@@ -33,7 +33,7 @@ btn.addEventListener('click', () => {
 @import "../../styles/breakpoints.scss";
     .root {
         .max-width {
-            margin: 1em $gap;
+            margin: 0 $gap;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -50,6 +50,6 @@ btn.addEventListener('click', () => {
     }
     #logo {
         margin-left: -2em;
-        @include mb-landscape { margin: 0; }
+        @include tablet { margin: 0; }
     }
 </style>
