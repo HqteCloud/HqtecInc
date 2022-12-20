@@ -1,0 +1,25 @@
+---
+import DefaultWrapper from '@layouts/default.astro'
+import Services from '@components/Services/index.astro'
+const path = Astro.url.href
+---
+
+<DefaultWrapper SEO={{}}>
+    <section class="align-center">
+        <div class="max-width">
+           <h2>404 page not found</h2>
+            <p>{ path }</p> 
+        </div>
+    </section>
+	
+</DefaultWrapper>
+
+<style lang="scss">
+@import "../styles/global.styles.scss";
+section {
+	// border-top: 1px solid var(--border);
+    justify-content: center;
+    min-height: 200px;
+    div { margin: $gap; word-break: break-all}
+}
+</style>

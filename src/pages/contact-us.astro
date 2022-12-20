@@ -1,5 +1,5 @@
 ---
-import DefaultWrapper from '@layouts/default.astro'
+import DefaultWrapper from '@layouts/default.astro';
 ---
 <DefaultWrapper SEO={{
     title: 'Contact Us - Hqtec Inc',
@@ -34,35 +34,35 @@ import DefaultWrapper from '@layouts/default.astro'
                 </div>
             </div>
             <div class="grid-item">
-                <form>
+                <form id="contact-form">
                     <div class="group">
                         <h3>Name *</h3>
                         <div class="wrapper">
                             <div class="input-box">
                                 <label for="firstName">First Name</label>
-                                <input type="text">
+                                <input type="text" name="firstName">
                                 <p></p>
                             </div>
                             <div class="input-box">
                                 <label for="lastName">Last Name</label>
-                                <input type="text">
+                                <input type="text" name="lastName">
                                 <p></p>
                             </div>
                         </div>
                     </div>
                     <div class="input-box">
                         <label for="Email">Email Address *</label>
-                        <input type="email">
+                        <input type="email" name="email_address">
                         <p></p>
                     </div>
                     <div class="input-box">
                         <label for="messageSubject">Subject *</label>
-                        <input type="text">
+                        <input type="text" name="subject">
                         <p></p>
                     </div>
                     <div class="input-box">
                         <label for="textArea">Message *</label>
-                        <textarea></textarea>
+                        <textarea name="message"></textarea>
                         <p></p>
                     </div>
                     <button type="submit">Submit</button>
@@ -71,8 +71,127 @@ import DefaultWrapper from '@layouts/default.astro'
             <div class="grid-item waste"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.4577263992064!2d-87.49311748515552!3d41.537685594628215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8811e0fcc81ee719%3A0x31c7e4fd5ce12486!2s1544%2045th%20Ave%2C%20Munster%2C%20IN%2046321%2C%20USA!5e0!3m2!1sen!2sng!4v1665974923801!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </div>
     </section>
-        
+    <!-- { false && <Success status={true} open={true} client:only="vue" /> } -->
 </DefaultWrapper>
+
+<script>
+import { ref, defineCustomElement
+, watch } from 'vue';
+const formStatus = ref(false)
+import emailjs from '@emailjs/browser';
+emailjs.init("Aj5-7omZWd5QrBR_Q");
+
+watch(formStatus, (newValue, oldValue) => {
+    if(newValue === true) {
+        document.body.appendChild(
+            new confirmationComponent({ open: true })
+        );
+
+        setTimeout(() => {
+            document.body.children[document.body.children.length - 1].remove()
+        }, 3000)
+    }
+})
+// CREATE CONFIRMATION COMPONENT
+const confirmationComponent = defineCustomElement({
+    props: {
+        status: {
+            type: Boolean,
+            default: false
+        },
+        open: {
+            type: Boolean,
+            default: false
+        }
+    },
+    setup() {
+    },
+    template: `
+            <div v-if="open === true" class="modal align-center">
+                <div class="container">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="121.572" height="121.572" viewBox="0 0 121.572 121.572">
+                            <g id="eb97e6dea4cc1011114a3d55ce22a7ba" transform="matrix(1, 0.017, -0.017, 1, -7.738, -10.173)">
+                                <path id="Path_233" data-name="Path 233" d="M69.752,129.5A59.752,59.752,0,1,1,129.5,69.752,59.755,59.755,0,0,1,69.752,129.5Zm0-117.517a57.765,57.765,0,1,0,57.765,57.765A57.767,57.767,0,0,0,69.752,11.988ZM65.375,85.227a1.538,1.538,0,0,1-1.1.439,1.516,1.516,0,0,1-1.11-.439L52.241,74.3a1.509,1.509,0,0,1,2.134-2.134l9.865,9.865L90.117,54.241a1.5,1.5,0,0,1,2.122,2.122L65.375,85.227Z"/>
+                            </g>
+                        </svg>
+                        <h2>Form submitted successfully</h2>
+                    </div>
+                </div>
+            </div>
+    `,
+    styles: [`
+        .container {
+            width: 100%;
+            max-width: 320px;
+            height: 20em;
+
+            border-radius: 3em;
+            border: 1px solid var(--base);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+
+            background: var(--background);
+            margin: 2em;
+        }
+        .container div { display: grid; grid-row-gap: 2em; place-items: center;}
+        .container h2 { max-width: 12em; text-align: center;}
+        .container svg { fill: var(--base); }
+        .modal {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+
+            background: rgba(0, 0, 0, 0.445);
+
+            display: flex;
+            justify-content: center;
+            overflow-y: auto;
+        }
+    `]
+})
+
+customElements.define('confirm-form', confirmationComponent);
+
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    emailjs.sendForm("service_381engo", "template_p5oyypu", "#contact-form")
+    .then(function(response) {
+        formStatus.value = true;
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+})
+</script>
+
+<!-- <script
+    type="text/javascript"
+    is:inline src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script is:inline>
+(function(){
+    emailjs.init("Aj5-7omZWd5QrBR_Q");
+})();
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    emailjs.sendForm("service_381engo", "template_p5oyypu", "#contact-form")
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+})
+</script> -->
 
 <style lang="scss">
 @import "../styles/global.styles.scss";

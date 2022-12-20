@@ -6,5 +6,20 @@ export default defineConfig({
   server: {
     host: true
   },
-  integrations: [vue()]
+  integrations: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.includes('-')
+        }
+      }
+    })
+  ],
+  vite: {
+    resolve: {
+      alias: {
+        vue: "vue/dist/vue.esm-bundler.js"
+      }
+    }
+  }
 });
