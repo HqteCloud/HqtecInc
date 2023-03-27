@@ -117,7 +117,7 @@ console.log(document.location.pathname)
     <div v-if="open" class="modal align-center" :class="{ start: status === false }">
         <div class="body" :class="{ error: formError.condition }" v-if="status === false">
             <div class="content">
-               <p>Thank you for considering a relationship with Jeremi Technology Solutions for general services. Please fill out the spaces below and provide a detailed description of what you would like to accomplish. Additionally, you can use the message box for any questions or concerns you may have about projects, services, and pricing. Please allow up to 48 hours for a response. <br> <br> All fields marked with " * " are required</p>
+               <p>Thank you for considering a relationship with Hqtec Inc for general services. Please fill out the spaces below and provide a detailed description of what you would like to accomplish. Additionally, you can use the message box for any questions or concerns you may have about projects, services, and pricing. Please allow up to 48 hours for a response. <br> <br> All fields marked with " * " are required</p>
             </div>
             
             <form id="form-information" @submit.prevent="sendEmail()">
