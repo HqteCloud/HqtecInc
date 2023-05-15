@@ -76,22 +76,22 @@ import DefaultWrapper from '@layouts/default.astro';
 
 <script>
 import { ref, defineCustomElement
-, watch } from 'vue';
+, watch } from 'vue/dist/vue.esm-bundler';
 const formStatus = ref(false)
 import emailjs from '@emailjs/browser';
-emailjs.init("Aj5-7omZWd5QrBR_Q");
+emailjs.init("KYUm4sjYKGgEhPNQK");
 
-watch(formStatus, (newValue, oldValue) => {
-    if(newValue === true) {
-        document.body.appendChild(
-            new confirmationComponent({ open: true })
-        );
+// watch(formStatus, (newValue, oldValue) => {
+//     if(newValue === true) {
+//         document.body.appendChild(
+//             new confirmationComponent({ open: true })
+//         );
 
-        setTimeout(() => {
-            document.body.children[document.body.children.length - 1].remove()
-        }, 3000)
-    }
-})
+//         setTimeout(() => {
+//             document.body.children[document.body.children.length - 1].remove()
+//         }, 3000)
+//     }
+// })
 // CREATE CONFIRMATION COMPONENT
 const confirmationComponent = defineCustomElement({
     props: {
@@ -163,10 +163,18 @@ customElements.define('confirm-form', confirmationComponent);
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    emailjs.sendForm("service_381engo", "template_p5oyypu", "#contact-form")
+    emailjs.sendForm("service_rfrmdc4", "template_odst6mp", "#contact-form")
     .then(function(response) {
         formStatus.value = true;
        console.log('SUCCESS!', response.status, response.text);
+
+       document.body.appendChild(
+            new confirmationComponent({ open: true })
+        );
+
+        setTimeout(() => {
+            document.body.children[document.body.children.length - 1].remove()
+        }, 3000)
     }, function(error) {
        console.log('FAILED...', error);
     });
