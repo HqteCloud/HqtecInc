@@ -74,5 +74,5 @@
 		"unplugin-auto-import": "^20.3.0",
 		"unplugin-vue-components": "^29.2.0"
 	},
-	"packageManager": "pnpm@11.8.0"
+	"packageManager": "pnpm@12.6.0"
 }
