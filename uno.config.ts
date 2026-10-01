@@ -6,7 +6,6 @@ import {
 	presetWind4,
 	transformerDirectives,
 } from "unocss";
-import processorLightningCSS from '@unocss/processor-lightningcss'
 import type { Preset } from "unocss";
 
 import { breakpoint } from "@unocss/preset-wind4/theme";
@@ -125,6 +124,5 @@ export default defineConfig({
 	layers: {
 		layout: -1,
 	},
-	transformers: [transformerDirectives()],
-	processors: [processorLightningCSS()],
+	transformers: [transformerDirectives()]
 });
