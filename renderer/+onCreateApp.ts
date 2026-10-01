@@ -1,9 +1,7 @@
 export { onCreateApp };
 
 import "virtual:uno.css";
-if (import.meta.env.DEV) {
-	import("./styles/main.css");
-}
+import "./styles/main.css";
 
 // PINIA
 import persist from "@plugins/pinia/persist";

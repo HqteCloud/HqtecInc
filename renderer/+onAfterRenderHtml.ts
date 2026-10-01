@@ -3,9 +3,7 @@ export { onAfterRenderHtml }
 import type { PageContextServer } from 'vike/types'
 import { stringify } from './plugins/pinia/utils';
 
-if (!import.meta.env.DEV) {
-	import("./styles/main.css");
-}
+import "./styles/main.css";
 
 const onAfterRenderHtml= async (pageContext: PageContextServer) => {
     // Set server pinia state
