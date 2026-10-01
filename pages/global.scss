@@ -1,0 +1,37 @@
+[data-section="pill"] {
+	@apply: px-2 py-1 bg-neutral-200 size-fit;
+	@apply: font-sans font-medium uppercase whitespace-nowrap_;
+	@apply: text-neutral-800;
+}
+[data-section="img"][data-clip] {
+	@apply: relative;
+
+	--size-default: var(--size, 20);
+	--size-sm: calc(var(--size-default) / 1.3);
+	--use-size: var(--size-sm);
+
+	--color-1: var(--clip-bg, theme("colors.background"));
+	--color-2: color-mix(in srgb, var(--color-1), #000 10%);
+
+	&::before {
+		@apply: content-empty;
+		background: linear-gradient(
+			45deg,
+			var(--color-2) 0 50%,
+			var(--color-1) 50% 100%
+		);
+
+		width: calc(var(--use-size) * var(--spacing));
+		height: calc(var(--use-size) * var(--spacing));
+	}
+
+	&[data-clip="top-right"] {
+		&::before {
+			@apply: absolute top-0 right-0 z-1;
+		}
+	}
+
+	@screen sm {
+		--use-size: var(--size-default);
+	}
+}

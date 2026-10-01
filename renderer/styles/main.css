@@ -1,3 +1,10 @@
+@import "tw-animate-css";
+/*---break---
+*/
+@custom-variant dark (&:is(.dark *));
+/*---break---
+*/
+
 /*@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
@@ -129,5 +136,62 @@
 	button:not(:disabled),
 	[role="button"]:not(:disabled) {
 		cursor: pointer;
+	}
+}
+/*---break---
+*/
+@theme inline {
+	--font-heading: var(--font-sans);
+}
+
+h1 {
+	@apply: leading-1em font-normal;
+	font-size: clamp(theme('text.6xl.fontSize'), 9vw + 1rem, theme('text.7xl.fontSize'));
+}
+
+h2 {
+	@apply: leading-1em font-medium;
+	font-size: clamp(theme('text.5xl.fontSize'), 6vw + 1rem, theme('text.6xl.fontSize'));
+	&.shrink {
+		font-size: clamp(
+			theme("text.4xl.fontSize"),
+			6vw + 1rem,
+			theme("text.5xl.fontSize")
+		);
+	}
+}
+
+h3 {
+	@apply: leading-1em font-medium;
+	font-size: clamp(theme('text.3xl.fontSize'), 4vw + 1rem, theme('text.4xl.fontSize'));
+}
+
+.btn-primary-gradient {
+	--first-stop: 0%;
+	--last-stop: 100%;
+	--first-color: color-mix(in oklab, theme('colors.accent') 90%, black);
+
+	@apply: relative z-0 transition-all duration-300;
+	box-shadow:  0px 0px 0px .12em #003896;
+
+	&::before {
+		@apply: content-empty;
+		@apply: absolute inset-0 -z-1;
+
+		background: linear-gradient(
+			180deg,
+			var(--first-color) var(--first-stop),
+			theme('colors.accent.foreground') var(--last-stop)
+		);
+	}
+
+	&::after {
+		@apply: content-empty;
+		@apply: absolute inset--.5 -z-2;
+		background: linear-gradient(180deg, theme('colors.accent.foreground'), theme('colors.accent'));
+	}
+
+	&:hover {
+		--first-stop: 70%;
 	}
 }

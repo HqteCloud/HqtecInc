@@ -226,7 +226,7 @@ const rules: Preset["rules"] = [
       const result = d === "inherit" ? content : result_1;
 
       return {
-        "--gap": "1.25em",
+        "--gap": "1em",
         "--root": "minmax(var(--gap), 1fr)",
         display: "grid",
         "align-content": "flex-start",

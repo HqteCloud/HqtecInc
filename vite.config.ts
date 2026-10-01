@@ -42,6 +42,10 @@ const config: UserConfig = {
 			"@plugins": path.resolve(__dirname, "./renderer/plugins"),
 		},
 	},
+
+	server: {
+		allowedHosts: true
+	}
 };
 
 export default config;

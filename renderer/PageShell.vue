@@ -12,7 +12,7 @@
 
 <style lang="scss">
 body {
-	--at-apply: bg-stone-100;
+	--at-apply: bg-background;
 	[viewport="content"] {
 		--at-apply: min-h-screen;
 	}

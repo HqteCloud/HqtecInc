@@ -10,6 +10,10 @@
 		"skipLibCheck": true,
 		"esModuleInterop": true,
 
+		// vue-tsx
+				"jsx": "preserve",
+				"jsxImportSource": "vue",
+
 		"paths": {
 			"@/*": ["./*"],
 			"@plugins/*": ["./renderer/plugins/*"]
