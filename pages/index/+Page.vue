@@ -42,8 +42,7 @@
 		</div>
 	</main>
 
-	<div data-section="trigger">
-	</div>
+	<div data-section="trigger"></div>
 
 	<section data-section="what-we-do">
 		<div data-section="content">
@@ -119,19 +118,38 @@
 	</section>
 
 	<div data-section="btn-group">
-		<Button variant="ghost" as="a" href="/contact">Request Technology Support</Button>
-		<Button variant="ghost" as="a" href="/technology-solutions">Explore Technology Solutions</Button>
+		<Button variant="ghost" as="a" href="/contact"
+			>Request Technology Support</Button
+		>
+		<Button variant="ghost" as="a" href="/technology-solutions"
+			>Explore Technology Solutions</Button
+		>
 		<Button variant="ghost" as="a" href="/products">Our Products</Button>
 	</div>
 
 	<section data-section="products-and-platforms">
 		<div data-section="content">
-			<h2 class="shrink">We Don't Just Implement Technology. We Build It.</h2>
-			<p>HQ TEC develops purpose-built technology around real operational and user problems. Our experience working across software, infrastructure, and technical environments gives us a practical understanding of what happens beyond the interface—how people work, where processes break down, and what technology needs to do in the real world.
-			<br />
-			<br />
-			That thinking is reflected in the products we build. DJ PlayNow addresses audience participation in live events, while our Student Management System, planned for implementation in November 2027, is being developed around the administrative and academic work surrounding students.</p>
-			<Button variant="secondary" as="a" href="/technology-solutions">Explore Products & Platforms</Button>
+			<h2 class="shrink">
+				We Don't Just Implement Technology. We Build It.
+			</h2>
+			<p>
+				HQ TEC develops purpose-built technology around real operational
+				and user problems. Our experience working across software,
+				infrastructure, and technical environments gives us a practical
+				understanding of what happens beyond the interface—how people
+				work, where processes break down, and what technology needs to
+				do in the real world.
+				<br />
+				<br />
+				That thinking is reflected in the products we build. DJ PlayNow
+				addresses audience participation in live events, while our
+				Student Management System, planned for implementation in
+				November 2027, is being developed around the administrative and
+				academic work surrounding students.
+			</p>
+			<Button variant="secondary" as="a" href="/technology-solutions"
+				>Explore Products & Platforms</Button
+			>
 		</div>
 
 		<span class="i-solar:double-alt-arrow-down-outline"></span>
@@ -145,12 +163,23 @@
 				<p>How We Work</p>
 			</div>
 
-			<h2 class="shrink">Understand the Site Before We Touch the Technology.</h2>
-			<p>From software and infrastructure to deployment and ongoing support, HQ TEC helps organizations build technology environments that are practical, secure, and ready for daily operations.</p>
+			<h2 class="shrink">
+				Understand the Site Before We Touch the Technology.
+			</h2>
+			<p>
+				From software and infrastructure to deployment and ongoing
+				support, HQ TEC helps organizations build technology
+				environments that are practical, secure, and ready for daily
+				operations.
+			</p>
 		</div>
 
 		<div data-section="process-grid">
-			<div data-section="process-item" v-for="(item, index) in process" :key="index">
+			<div
+				data-section="process-item"
+				v-for="(item, index) in process"
+				:key="index"
+			>
 				<div data-section="content">
 					<span :class="item.icon"></span>
 					<h3>{{ item.title }}</h3>
@@ -170,10 +199,111 @@
 			</Button>
 		</div>
 	</section>
+
+	<section data-section="what-we-work-on">
+		<div data-section="content">
+			<div data-section="pill">
+				<p>What We Work On</p>
+			</div>
+			<h3>In case you were wondering</h3>
+			<p>
+				Technology needs more than installation. Hqtec provides the
+				hands-on expertise businesses need to maintain, troubleshoot,
+				repair, and secure their technology environments.
+			</p>
+		</div>
+
+		<ul data-section="solutions-list">
+			<li
+				v-for="solution in db.technologySolutions"
+				:key="solution.solution"
+			>
+				<details name="technology-solution">
+					<summary>{{ solution.title ?? solution.solution }}</summary>
+					<p>{{ solution.description }}</p>
+				</details>
+			</li>
+		</ul>
+
+		<div data-section="cta">
+			<Button variant="secondary">
+				Start a conversation
+				<span data-icon class="i-solar:arrow-right-outline"></span>
+			</Button>
+		</div>
+	</section>
+
+	<section data-section="tech-and-why-us">
+		<div data-section="technology-solutions">
+			<div data-section="content">
+				<div data-section="pill">
+					<p>Technology Solutions</p>
+				</div>
+
+				<h3>Technology Has to Work Outside the Demo.</h3>
+				<p>
+					A system can look impressive in a presentation and still
+					fail in the environment where people actually need it.
+					<br />
+					<br />
+					Our technology-services work is grounded in implementation.
+					We help organizations develop software, prepare sites,
+					install cabling and equipment, deploy network technology,
+					support cloud environments, install security and
+					surveillance systems, conduct site surveys, and address
+					technology issues after deployment.
+					<br />
+					<br />
+					The work may begin with a single service request or a larger
+					project. Either way, we start by understanding what needs to
+					work when we leave.
+				</p>
+			</div>
+
+			<div data-section="img" data-clip="top-left">
+				<img :src="images.img6.src" :alt="images.img6.alt" />
+			</div>
+		</div>
+		<div data-section="why-hqtec">
+			<div data-section="content">
+				<div data-section="pill">
+					<p>Why HQ TEC</p>
+				</div>
+
+				<h3>We Look at the Whole Environment.</h3>
+				<p>
+					A software problem may actually be a connectivity problem. A
+					deployment problem may begin with an incomplete site survey.
+					A new piece of equipment is not useful if it is installed
+					without considering the network, power, security, users, or
+					support that surround it.
+					<br />
+					<br />
+
+					Because our work crosses software and physical
+					infrastructure, we are accustomed to looking beyond the
+					immediate task.
+					<br />
+					<br />
+
+					<b
+						>That does not mean every project needs every HQ TEC
+						service. It means we understand how the pieces affect
+						one another—and we plan accordingly.</b
+					>
+				</p>
+			</div>
+
+			<div data-section="img" data-clip="top-right">
+				<img :src="images.img7.src" :alt="images.img7.alt" />
+			</div>
+		</div>
+	</section>
 </template>
 
 <script lang="ts" setup>
 import constants from "@/lib/constants/images";
+import db from "@/lib/shared.db";
 
 const { images } = constants;
 
@@ -204,24 +334,28 @@ const process = [
 	{
 		icon: "i-solar:magnifier-linear",
 		title: "Assess",
-		definition: "We start with the requirement. What is there now? What needs to change? What does the client need the technology to do?"
+		definition:
+			"We start with the requirement. What is there now? What needs to change? What does the client need the technology to do?",
 	},
 	{
 		icon: "i-solar:layout-list-line-duotone",
 		title: "Plan",
-		definition: "We determine the equipment, materials, configuration, access, scheduling, and technical work required."
+		definition:
+			"We determine the equipment, materials, configuration, access, scheduling, and technical work required.",
 	},
 	{
 		icon: "i-solar:rocket-outline",
 		title: "Deploy",
-		definition: "We install, configure, connect, test, and document the work."
+		definition:
+			"We install, configure, connect, test, and document the work.",
 	},
 	{
 		icon: "i-solar:chat-round-dots-outline",
 		title: "Support",
-		definition: "When the project is complete, the technology still has to operate. We remain focused on maintainability, issue resolution, and the next operational need."
+		definition:
+			"When the project is complete, the technology still has to operate. We remain focused on maintainability, issue resolution, and the next operational need.",
 	},
-]
+];
 </script>
 
 <style lang="scss">
@@ -364,7 +498,7 @@ section[data-section="what-we-do"] {
 			@apply: relative mb-4;
 
 			[data-section="pill"] {
-				@apply: absolute top-2 left-2 bg-neutral-100/30;
+				@apply: absolute top-2 left-2 bg-neutral-100/40;
 			}
 
 			img {
@@ -459,7 +593,7 @@ section[data-section="what-we-do"] {
 			@apply: text-tertiary;
 		}
 
-		&>p {
+		& > p {
 			@apply: text-tertiary leading-5.5;
 		}
 
@@ -468,7 +602,7 @@ section[data-section="what-we-do"] {
 		}
 	}
 
-	&>span {
+	& > span {
 		@apply: text-4xl mx-a max-md:hidden;
 	}
 }
@@ -479,13 +613,13 @@ section[data-section="what-we-do"] {
 
 	[data-section="content"] {
 		@apply: grid items-start justify-items-center text-center gap-1;
-		&>p {
+		& > p {
 			@apply: max-w-lg text-tertiary;
 		}
 
 		h2 {
 			@apply: tracking-tight;
-			color: color-mix(in srgb, theme('colors.accent'), #000 20%)
+			color: color-mix(in srgb, theme("colors.accent"), #000 20%);
 		}
 	}
 
@@ -494,7 +628,9 @@ section[data-section="what-we-do"] {
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		grid-auto-rows: 1fr;
 
-		[data-section="process-item"]:hover, &:not(:has([data-section="process-item"]:hover)) [data-section="process-item"]:first-child {
+		[data-section="process-item"]:hover,
+		&:not(:has([data-section="process-item"]:hover))
+			[data-section="process-item"]:first-child {
 			@apply: bg-tertiary text-neutral-50;
 			p {
 				@apply: text-neutral-50;
@@ -508,20 +644,21 @@ section[data-section="what-we-do"] {
 
 	[data-section="process-item"] {
 		@apply: text-tertiary bg-neutral-50 flex flex-col justify-between max-h-xs;
+		@apply: transition-all duration-400;
 
-		--clip-art-color: theme('colors.card.3');
+		--clip-art-color: theme("colors.card.3");
 
 		[data-section="content"] {
 			@apply: py-6 px-3 grid items-start content-start gap-2 justify-items-center text-center;
 			span:first-child {
-				@apply: text-6xl md:hidden;
+				@apply: text-6xl lg:hidden;
 			}
 
 			h3 {
 				@apply: font-medium tracking-tight;
 			}
 
-			&>p {
+			& > p {
 				@apply: leading-5 max-w-3xs;
 			}
 		}
@@ -541,10 +678,116 @@ section[data-section="what-we-do"] {
 				);
 			}
 		}
-
 	}
-		[data-section="cta"] {
-			@apply: flex justify-center;
+	[data-section="cta"] {
+		@apply: flex justify-center;
+	}
+}
+
+[data-section="what-we-work-on"] {
+	@apply: bg-tertiary bk-col-root bk-container-[full] *:bk-col-content;
+	@apply: py-24 space-y-12!;
+
+	& > div[data-section="content"] {
+		@apply: grid justify-items-center text-center gap-1.5;
+		h3 {
+			@apply: text-neutral-50 tracking-tight max-w-110;
 		}
+
+		& > p {
+			@apply: text-neutral-300 mt-6 max-w-lg;
+		}
+	}
+
+	ul[data-section="solutions-list"] {
+		@apply: bk-col-full text-neutral-200;
+		& * {
+			@apply: transition-all duration-300;
+		}
+
+		details {
+			summary {
+				@apply: flex items-center justify-between py-2 px-4 border-b-2 border-neutral-200/40;
+				@apply: text-lg font-medium uppercase cursor-pointer;
+
+				&::after {
+					@apply: content-empty text-xl i-solar:add-circle-bold text-white;
+				}
+			}
+
+			p {
+				@apply: py-3;
+			}
+
+			&[open] {
+				summary {
+					@apply: bg-neutral-200/10;
+				}
+			}
+		}
+
+		&:has(details[open]) {
+			li:has(details:not([open])) {
+				@apply: mx-6;
+				// @apply: opacity-80 scale-[calc(100%_-_(sibling-index()_-_1)_*_3%)];
+			}
+		}
+	}
+
+	[data-section="cta"] {
+		@apply: flex justify-center;
+	}
+}
+
+section[data-section="tech-and-why-us"] {
+	@apply: bk-col-root min-h-screen;
+	@apply: p-1 gap-1 grid md:grid-cols-2;
+
+	& > div {
+		@apply: bg-tertiary min-h-full;
+	}
+
+	div[data-section="content"] {
+		@apply: grid justify-items-center text-center gap-1.5 py-12 px-6;
+		h3 {
+			@apply: text-neutral-50 tracking-tight max-w-110;
+		}
+
+		& > p {
+			@apply: text-neutral-200 mt-6 max-w-lg;
+		}
+	}
+
+	img {
+		@apply: size-full object-cover absolute;
+		@apply: top-0 left-0 right-0 bottom-0;
+		@apply: pt-1 md:p-1 bg-white;
+	}
+
+	[data-section="img"] {
+		--size: 25;
+		--color-1: var(--clip-bg, theme("colors.tertiary"));
+		--color-2: theme("colors.white");
+	}
+
+	[data-section="technology-solutions"] {
+		@apply: flex flex-col justify-between items-end md:pb-10 w-full;
+		[data-section="img"] {
+			@apply: w-full md:max-w-135 relative h-100;
+			img {
+				@apply: pr-0;
+			}
+		}
+	}
+
+	[data-section="why-hqtec"] {
+		@apply: md:pb-10;
+		[data-section="img"] {
+			@apply: md:max-w-135 relative h-117.5;
+			img {
+				@apply: pl-0;
+			}
+		}
+	}
 }
 </style>

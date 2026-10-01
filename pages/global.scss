@@ -31,6 +31,39 @@
 		}
 	}
 
+	&[data-clip="top-left"] {
+		&::before {
+			@apply: absolute top-0 left-0 z-1;
+			background: linear-gradient(
+				135deg,
+				var(--color-1) 0 50%,
+				var(--color-2) 50% 100%
+			);
+		}
+	}
+
+	&[data-clip="bottom-right"] {
+		&::before {
+			@apply: absolute bottom-0 right-0 z-1;
+			background: linear-gradient(
+				135deg,
+				var(--color-1) 0 50%,
+				var(--color-2) 50% 100%
+			);
+		}
+	}
+
+	&[data-clip="bottom-left"] {
+		&::before {
+			@apply: absolute bottom-0 left-0 z-1;
+			background: linear-gradient(
+				135deg,
+				var(--color-1) 0 50%,
+				var(--color-2) 50% 100%
+			);
+		}
+	}
+
 	@screen sm {
 		--use-size: var(--size-default);
 	}
