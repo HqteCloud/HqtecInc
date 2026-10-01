@@ -6,6 +6,7 @@ import {
 	presetWind4,
 	transformerDirectives,
 } from "unocss";
+import processorLightningCSS from '@unocss/processor-lightningcss'
 import type { Preset } from "unocss";
 
 import { breakpoint } from "@unocss/preset-wind4/theme";
@@ -125,17 +126,5 @@ export default defineConfig({
 		layout: -1,
 	},
 	transformers: [transformerDirectives()],
-	content: {
-		pipeline: {
-			include: [
-				/\.(vue|svelte|[jt]sx|vine.ts|mdx?|astro|elm|php|phtml|html)($|\?)/,
-				"components/ui/**/*.{ts,tsx,vue,svelte}",
-				"renderer/styles/main.css",
-			],
-		},
-		filesystem: [
-			"components/ui/**/*.{ts,tsx,vue,svelte}",
-			"renderer/styles/main.css",
-		],
-	},
+	processors: [processorLightningCSS()],
 });
