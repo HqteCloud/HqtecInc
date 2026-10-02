@@ -166,6 +166,11 @@ h3 {
 	font-size: clamp(theme('text.3xl.fontSize'), 4vw + 1rem, theme('text.4xl.fontSize'));
 }
 
+h4 {
+	@apply: leading-1em font-medium;
+	font-size: clamp(theme('text.2xl.fontSize'), 3vw + 1rem, theme('text.3xl.fontSize'));
+}
+
 .btn-primary-gradient {
 	--first-stop: 0%;
 	--last-stop: 100%;

@@ -47,7 +47,7 @@ declare global {
 				) => void | ((pageContext: PageContextServer) => Promise<void>)
 			>;
 			unhead?: Vike.meta;
-			secrets?: Record<string, string>;
+			secrets?: Record<string, any>;
 			stream?: "simple" | "web";
 			pageProps?: Record<string, any>
 		}

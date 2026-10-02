@@ -234,71 +234,155 @@
 	</section>
 
 	<section data-section="tech-and-why-us">
-		<div data-section="technology-solutions">
-			<div data-section="content">
-				<div data-section="pill">
-					<p>Technology Solutions</p>
+		<div data-section="container">
+			<div data-section="row">
+				<div data-section="technology-solutions">
+					<div data-section="content">
+						<div data-section="pill">
+							<p>Technology Solutions</p>
+						</div>
+
+						<h3>Technology Has to Work Outside the Demo.</h3>
+						<p>
+							A system can look impressive in a presentation and
+							still fail in the environment where people actually
+							need it.
+							<br />
+							<br />
+							Our technology-services work is grounded in
+							implementation. We help organizations develop
+							software, prepare sites, install cabling and
+							equipment, deploy network technology, support cloud
+							environments, install security and surveillance
+							systems, conduct site surveys, and address
+							technology issues after deployment.
+							<br />
+							<br />
+							The work may begin with a single service request or
+							a larger project. Either way, we start by
+							understanding what needs to work when we leave.
+						</p>
+					</div>
+
+					<div data-section="img" data-clip="top-left">
+						<img :src="images.img6.src" :alt="images.img6.alt" />
+					</div>
 				</div>
+				<div data-section="why-hqtec">
+					<div data-section="content">
+						<div data-section="pill">
+							<p>Why HQ TEC</p>
+						</div>
 
-				<h3>Technology Has to Work Outside the Demo.</h3>
-				<p>
-					A system can look impressive in a presentation and still
-					fail in the environment where people actually need it.
-					<br />
-					<br />
-					Our technology-services work is grounded in implementation.
-					We help organizations develop software, prepare sites,
-					install cabling and equipment, deploy network technology,
-					support cloud environments, install security and
-					surveillance systems, conduct site surveys, and address
-					technology issues after deployment.
-					<br />
-					<br />
-					The work may begin with a single service request or a larger
-					project. Either way, we start by understanding what needs to
-					work when we leave.
-				</p>
-			</div>
+						<h3>We Look at the Whole Environment.</h3>
+						<p>
+							A software problem may actually be a connectivity
+							problem. A deployment problem may begin with an
+							incomplete site survey. A new piece of equipment is
+							not useful if it is installed without considering
+							the network, power, security, users, or support that
+							surround it.
+							<br />
+							<br />
 
-			<div data-section="img" data-clip="top-left">
-				<img :src="images.img6.src" :alt="images.img6.alt" />
-			</div>
-		</div>
-		<div data-section="why-hqtec">
-			<div data-section="content">
-				<div data-section="pill">
-					<p>Why HQ TEC</p>
+							Because our work crosses software and physical
+							infrastructure, we are accustomed to looking beyond
+							the immediate task.
+							<br />
+							<br />
+
+							<b
+								>That does not mean every project needs every HQ
+								TEC service. It means we understand how the
+								pieces affect one another—and we plan
+								accordingly.</b
+							>
+						</p>
+					</div>
+
+					<div data-section="img" data-clip="top-right">
+						<img :src="images.img7.src" :alt="images.img7.alt" />
+					</div>
 				</div>
-
-				<h3>We Look at the Whole Environment.</h3>
-				<p>
-					A software problem may actually be a connectivity problem. A
-					deployment problem may begin with an incomplete site survey.
-					A new piece of equipment is not useful if it is installed
-					without considering the network, power, security, users, or
-					support that surround it.
-					<br />
-					<br />
-
-					Because our work crosses software and physical
-					infrastructure, we are accustomed to looking beyond the
-					immediate task.
-					<br />
-					<br />
-
-					<b
-						>That does not mean every project needs every HQ TEC
-						service. It means we understand how the pieces affect
-						one another—and we plan accordingly.</b
-					>
-				</p>
-			</div>
-
-			<div data-section="img" data-clip="top-right">
-				<img :src="images.img7.src" :alt="images.img7.alt" />
 			</div>
 		</div>
 	</section>
+
+	<section data-section="north-american-branch">
+		<div data-section="container">
+			<div data-section="content">
+				<div>
+					<div>
+						<h2 class="shrink">Our North American Presence</h2>
+						<p>
+							HQ TEC operates through a connected North American
+							corporate structure, with HQ TEC, Inc. in the United
+							States and its wholly owned Canadian subsidiary, HQ
+							TEC Technologies Canada Inc.
+						</p>
+					</div>
+
+					<div>
+						<Button>Learn About HQ TEC</Button>
+						<p>
+							Together, we are building a foundation for digital
+							product development, practical technology solutions,
+							strategic partnerships, and responsible growth
+							across the United States and Canada.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div data-section="img">
+				<img :src="images.img16.src" :alt="images.img16.alt" />
+			</div>
+		</div>
+	</section>
+
+	<section data-section="insights">
+		<h2>
+			We spend a great deal of time thinking about what happens after
+			technology reaches the user. HQ TEC Insights is where we examine
+			those questions more closely: digital products, business technology,
+			education systems, live entertainment, audience engagement, and the
+			changing role of technology in everyday operations.
+		</h2>
+
+		<div data-section="news-and-events">
+			<div data-section="content">
+				<div data-section="pill">
+					<p>News & Events</p>
+				</div>
+				<h3>HQ TEC Insights</h3>
+			</div>
+			<ul data-section="articles">
+				<li
+					v-for="article in $pageContext.data.articles.slice(0, 3)"
+					:key="article.slug"
+					data-section="article-item"
+				>
+					<a :href="article.canonical_url" target="_blank" rel="noopener">
+						<div data-section="pill">
+							<p>{{ new Intl.DateTimeFormat("en-US", {
+								dateStyle: "long",
+							}).format(new Date(article.post_date)) }}</p>
+						</div>
+
+						<div data-section="img" data-clip="top-right">
+							<img :src="article.cover_image" :alt="article.title" />
+						</div>
+
+						<div>
+							<h4>{{ article.title }}</h4>
+							<Button :href="article.canonical_url" as="a" variant="link">Read More</Button>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<Footer />
 </template>
 
 <script lang="ts" setup>
@@ -369,8 +453,6 @@ main[data-section="hero"] {
 		@apply: grid-col-[nav];
 		@apply: grid;
 
-		// gap: clamp(0px, 3vw, 5rem);
-
 		& > div:first-child {
 			@apply: pt-14 pb-0 max-md:mx-4;
 
@@ -440,7 +522,7 @@ main[data-section="hero"] {
 }
 
 section[data-section="what-we-do"] {
-	@apply: pt-9 pb-4 min-h-screen bk-col-root bk-container-inherit space-y-8!;
+	@apply: pt-9 pb-4 bk-col-root bk-container-inherit space-y-8!;
 
 	& > div[data-section="content"] {
 		@apply: grid justify-items-center text-center;
@@ -562,7 +644,6 @@ section[data-section="what-we-do"] {
 [data-section="btn-group"] {
 	@apply: grid bk-col-root md:bk-col-nav max-md:mt-12 md:mb-12;
 	@apply: sm:grid-cols-2 lg:grid-cols-3;
-	// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 	[data-slot="button"] {
 		@apply: outline outline-neutral-300 outline-solid;
@@ -608,7 +689,7 @@ section[data-section="what-we-do"] {
 }
 
 [data-section="how-we-work"] {
-	@apply: min-h-screen-md bg-card-3 mt-4 bk-col-root pt-31 pb-8;
+	@apply: bg-card-3 mt-4 bk-col-root pt-31 pb-8;
 	@apply: bk-container-[nav] *:bk-col-content gap-y-8;
 
 	[data-section="content"] {
@@ -729,7 +810,6 @@ section[data-section="what-we-do"] {
 		&:has(details[open]) {
 			li:has(details:not([open])) {
 				@apply: mx-6;
-				// @apply: opacity-80 scale-[calc(100%_-_(sibling-index()_-_1)_*_3%)];
 			}
 		}
 	}
@@ -740,15 +820,39 @@ section[data-section="what-we-do"] {
 }
 
 section[data-section="tech-and-why-us"] {
-	@apply: bk-col-root min-h-screen;
-	@apply: p-1 gap-1 grid md:grid-cols-2;
+	@apply: bk-col-root;
+	@apply: p-1;
 
-	& > div {
-		@apply: bg-tertiary min-h-full;
+	[data-section="container"] {
+		--full-val: 80rem;
+		@apply: bk-container-[full] remove-margin bg-tertiary;
+	}
+
+	[data-section="row"] {
+		@apply: gap-1 grid md:grid-cols-2 bk-col-full relative;
+		@screen md {
+			& {
+				&::after {
+					@apply: content-empty;
+					@apply: absolute top-0 bottom-0 left-50% translate-x--50%;
+					@apply: border-r-[calc(var(--spacing)_*_1)] border-white;
+				}
+			}
+		}
+
+		@screen lt-md {
+			[data-section="technology-solutions"] {
+				@apply: border-b-[calc(var(--spacing)_*_1)] border-white;
+			}
+		}
+	}
+
+	[data-section="row"] > div {
+		@apply: min-h-full relative z-0;
 	}
 
 	div[data-section="content"] {
-		@apply: grid justify-items-center text-center gap-1.5 py-12 px-6;
+		@apply: grid justify-items-center text-center gap-1.5 py-12 px-6 w-full;
 		h3 {
 			@apply: text-neutral-50 tracking-tight max-w-110;
 		}
@@ -786,6 +890,101 @@ section[data-section="tech-and-why-us"] {
 			@apply: md:max-w-135 relative h-117.5;
 			img {
 				@apply: pl-0;
+			}
+		}
+	}
+}
+
+section[data-section="north-american-branch"] {
+	@apply: bk-col-root bk-container-[nav] md:py-6 max-md:remove-margin;
+	[data-section="container"] {
+		@apply: bg-neutral-200/50 bk-col-nav;
+		@apply: grid md:grid-cols-2 md:min-h-screen-sm;
+	}
+
+	[data-section="content"] {
+		@apply: flex justify-center items-start py-9 h-full mx-4;
+		& > div {
+			@apply: flex flex-col justify-between max-w-lg;
+			@apply: text-center text-tertiary h-full gap-8;
+
+			div {
+				@apply: space-y-3!;
+			}
+		}
+		[data-section="spacer"] {
+			@apply: h-full;
+		}
+	}
+
+	[data-section="img"] {
+		@apply: relative h-full;
+		img {
+			@apply: size-full object-contain;
+		}
+	}
+}
+
+[data-section="insights"] {
+	@apply: bk-col-root bk-container-[nav,full] py-14 space-y-56!;
+	h2 {
+		@apply: bk-col-full text-xl text-center leading-6;
+	}
+
+	[data-section="news-and-events"] {
+		@apply: bk-col-nav space-y-6!;
+
+		[data-section="content"] {
+			@apply: grid justify-items-center gap-2;
+		}
+	}
+
+	[data-section="articles"] {
+		@apply: grid gap-4 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] md:grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))];
+	}
+
+	[data-section="article-item"] {
+		@apply: p-3 bg-neutral-100 relative transition-all;
+		@apply: overflow-clip z-0;
+
+		& > a {
+			@apply: flex flex-col justify-between gap-8.5 h-full;
+			h4 {
+				@apply: font-sans;
+			}
+
+			[data-slot="button"] {
+				@apply: -ml-2;
+			}
+		}
+
+		[data-section="img"] {
+			--color-1: theme("colors.neutral.100");
+			--color-2: color-mix(in srgb, theme("colors.accent.foreground"), #000 10%);
+		}
+
+		&::before {
+			@apply: content-empty md:size-10 absolute transition-all duration-400;
+			@apply: top-50% left-50% translate--50%;
+			@apply: bg-tertiary rounded-full -z-1;
+		}
+
+		&:hover {
+			&:before {
+				@apply: max-md:size-10;
+				@apply: scale-2000 md:scale-1650;
+			}
+
+			[data-section="img"] {
+				--color-1: theme("colors.tertiary");
+			}
+
+			h4 {
+				@apply: text-neutral-50;
+			}
+
+			[data-slot="button"] {
+				@apply: text-accent-foreground underline;
 			}
 		}
 	}
