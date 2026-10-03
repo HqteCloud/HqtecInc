@@ -74,7 +74,10 @@ import db from "@/lib/shared.db";
 							</header>
 
 							<ul>
-								<li v-for="item in db.technologySolutions" :key="item.solution">
+								<li
+									v-for="item in db.technologySolutions"
+									:key="item.solution"
+								>
 									<a href="">
 										{{ item.title ?? item.solution }}
 									</a>
@@ -85,7 +88,9 @@ import db from "@/lib/shared.db";
 						<li>
 							<button data-section="cta-btn">
 								Contact Us
-								<span class="i-solar:arrow-right-outline"></span>
+								<span
+									class="i-solar:arrow-right-outline"
+								></span>
 							</button>
 						</li>
 					</ul>
@@ -93,22 +98,22 @@ import db from "@/lib/shared.db";
 						<li>
 							<p>HQ TEC North America</p>
 							<p>
-								HQ TEC, Inc. — United States HQ TEC Technologies
-								Canada Inc. — Canada
+								<a href="">
+								HQ TEC, Inc. — United States HQ TEC Technologies Canada Inc. — Canada
+
+								</a>
 							</p>
 						</li>
 						<li>
 							<p>Contact</p>
-							<p>1544 45th Avenue, Munster, IN 46321</p>
+							<a href="https://maps.app.goo.gl/ocyS284ggPnumMwR9">1544 45th Avenue, Munster, IN 46321</a>
 							<p>
-							<a href="mailto:contact@hqtecinc.com"
-								>contact@hqtecinc.com</a
-							>
-
+								<a href="mailto:contact@hqtecinc.com"
+									>contact@hqtecinc.com</a
+								>
 							</p>
 							<p>
-
-							<a href="tel:+12198959929">+1 (219) 895-9929</a>
+								<a href="tel:+12198959929">+1 (219) 895-9929</a>
 							</p>
 						</li>
 					</ul>
@@ -123,27 +128,54 @@ import db from "@/lib/shared.db";
 				</ul>
 
 				<ul>
-					<li><a href="">
-						<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g>
-    <path d="M5.48465 24.5001L0.405273 24.5001L0.405273 8.14282L5.48465 8.14282L5.48465 24.5001ZM2.94175 5.9115C1.31775 5.9115 0 4.56575 0 2.94175C2.38419e-07 1.31707 1.31707 0 2.94175 0C4.56643 0 5.8835 1.31707 5.8835 2.94175C5.8835 4.56575 4.56575 5.9115 2.94175 5.9115C2.94175 5.9115 2.94175 5.9115 2.94175 5.9115ZM24.4948 24.5L19.4268 24.5C19.4268 24.5 19.4268 16.5375 19.4268 16.5375C19.4268 14.6397 19.3883 12.2063 16.786 12.2063C14.1453 12.2063 13.7401 14.2678 13.7401 16.401C13.7401 16.401 13.7401 24.5 13.7401 24.5L8.66602 24.5L8.66602 8.1428L13.5371 8.1428L13.5371 10.374C13.5371 10.374 13.608 10.374 13.608 10.374C14.2861 9.08867 15.9425 7.73242 18.4135 7.73242C23.5541 7.73242 24.4991 11.1178 24.4991 15.5147C24.4991 15.5147 24.4991 24.5 24.4991 24.5L24.4948 24.5Z" fill="#C5CAE9" transform="translate(1.75 0)" />
-  </g>
-						</svg>
-					</a></li>
-					<li><a href="">
-						<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(0 0)">
-    <path d="M19.6 22.3999L9.8 16.9049L0 22.3999L0 10.093L19.6 10.093L19.6 22.3999ZM19.6 7.69131L0 7.69131L0 5.04443L19.6 5.04443L19.6 7.69131ZM19.6 0L19.6 2.64687L0 2.64687L0 0L19.6 0Z" fill="#C5CAE9" transform="translate(4.2 2.8)" />
-  </g>
-						</svg>
-					</a></li>
+					<li>
+						<a href="">
+							<svg
+								width="28"
+								height="28"
+								viewBox="0 0 28 28"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g>
+									<path
+										d="M5.48465 24.5001L0.405273 24.5001L0.405273 8.14282L5.48465 8.14282L5.48465 24.5001ZM2.94175 5.9115C1.31775 5.9115 0 4.56575 0 2.94175C2.38419e-07 1.31707 1.31707 0 2.94175 0C4.56643 0 5.8835 1.31707 5.8835 2.94175C5.8835 4.56575 4.56575 5.9115 2.94175 5.9115C2.94175 5.9115 2.94175 5.9115 2.94175 5.9115ZM24.4948 24.5L19.4268 24.5C19.4268 24.5 19.4268 16.5375 19.4268 16.5375C19.4268 14.6397 19.3883 12.2063 16.786 12.2063C14.1453 12.2063 13.7401 14.2678 13.7401 16.401C13.7401 16.401 13.7401 24.5 13.7401 24.5L8.66602 24.5L8.66602 8.1428L13.5371 8.1428L13.5371 10.374C13.5371 10.374 13.608 10.374 13.608 10.374C14.2861 9.08867 15.9425 7.73242 18.4135 7.73242C23.5541 7.73242 24.4991 11.1178 24.4991 15.5147C24.4991 15.5147 24.4991 24.5 24.4991 24.5L24.4948 24.5Z"
+										fill="#C5CAE9"
+										transform="translate(1.75 0)"
+									/>
+								</g>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<svg
+								width="28"
+								height="28"
+								viewBox="0 0 28 28"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g transform="translate(0 0)">
+									<path
+										d="M19.6 22.3999L9.8 16.9049L0 22.3999L0 10.093L19.6 10.093L19.6 22.3999ZM19.6 7.69131L0 7.69131L0 5.04443L19.6 5.04443L19.6 7.69131ZM19.6 0L19.6 2.64687L0 2.64687L0 0L19.6 0Z"
+										fill="#C5CAE9"
+										transform="translate(4.2 2.8)"
+									/>
+								</g>
+							</svg>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
 
 		<div data-section="rights">
 			<p>© 2026 HQ TEC, Inc. All rights reserved.</p>
-			<p>HQ TEC Technologies Canada Inc. is a wholly owned Canadian subsidiary of HQ TEC, Inc.</p>
+			<p>
+				HQ TEC Technologies Canada Inc. is a wholly owned Canadian
+				subsidiary of HQ TEC, Inc.
+			</p>
 		</div>
 	</footer>
 </template>
@@ -189,7 +221,7 @@ footer {
 				}
 
 				li a {
-					@apply: text-neutral-100;
+					@apply: text-neutral-100 transition-all duration-400;
 				}
 
 				&:not(:has(header)) {
@@ -197,7 +229,8 @@ footer {
 				}
 			}
 
-			&>ul:last-child {
+			& > ul:last-child {
+				@apply: space-y-4!;
 				li p {
 					@apply: w-fit;
 					&:first-child {
@@ -213,6 +246,12 @@ footer {
 				@apply: bg-indigo-900 text-white font-medium py-1 px-2 rounded-lg;
 				@apply: flex items-center gap-3 justify-between w-full;
 				@apply: border border-neutral-400;
+			}
+
+			&:has(a:hover) {
+				a:not(:hover) {
+					@apply: opacity-50;
+				}
 			}
 		}
 
