@@ -897,17 +897,23 @@ section[data-section="tech-and-why-us"] {
 
 section[data-section="north-american-branch"] {
 	@apply: bk-col-root bk-container-[nav] md:py-6 max-md:remove-margin;
+	--size: calc(var(--spacing) * 4);
+
+	@screen md {
+		--size: calc(var(--spacing) * 7);
+	}
+
 	[data-section="container"] {
 		@apply: bg-neutral-200/50 bk-col-nav relative;
 		@apply: grid md:grid-cols-2 md:min-h-screen-sm_;
 
 		&::before, &::after {
-			@apply: content-empty size-7 bg-background;
-			@apply: absolute bottom-0 left-7;
+			@apply: content-empty size-[var(--size)] bg-background;
+			@apply: absolute bottom-0 left-[var(--size)];
 		}
 
 		&::after {
-			@apply: bottom-7 left-14;
+			@apply: bottom-[var(--size)] left-[calc(var(--size)*2)];
 		}
 	}
 
@@ -926,7 +932,7 @@ section[data-section="north-american-branch"] {
 		}
 
 		&::before {
-			@apply: content-empty size-7 bg-background;
+			@apply: content-empty size-[var(--size)] bg-background;
 			@apply: absolute top-0 left-0;
 		}
 	}
@@ -938,12 +944,12 @@ section[data-section="north-american-branch"] {
 		}
 
 		&::before, &::after {
-			@apply: content-empty size-7 bg-background;
-			@apply: absolute top-0 right-7;
+			@apply: content-empty size-[var(--size)] bg-background;
+			@apply: absolute top-0 right-[var(--size)];
 		}
 
 		&::after {
-			@apply: top-7 right-14;
+			@apply: top-[var(--size)] right-[calc(var(--size)*2)];
 		}
 	}
 }

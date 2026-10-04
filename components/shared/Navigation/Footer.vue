@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import db from "@/lib/shared.db";
+import constants from "@/lib/constants/images";
+
+const { images } = constants;
+const bgCta = `url(${images.img3.src})`;
 </script>
 
 <template>
@@ -11,7 +15,7 @@ import db from "@/lib/shared.db";
 					improve. We'll help you figure out what's next.
 				</p>
 
-				<Button variant="secondary">
+				<Button variant="secondary" as="a" href="/contact">
 					Talk to Our Team
 					<span class="i-solar:arrow-right-outline"></span>
 				</Button>
@@ -21,7 +25,9 @@ import db from "@/lib/shared.db";
 		<div data-section="footer">
 			<div data-section="footer-content">
 				<div data-section="footer-logo">
+					<a href="/">
 					<img src="/logo.svg" alt="Hqtec Inc. Logo" width="270" />
+					</a>
 				</div>
 				<div data-section="footer-links">
 					<ul>
@@ -78,7 +84,7 @@ import db from "@/lib/shared.db";
 									v-for="item in db.technologySolutions"
 									:key="item.solution"
 								>
-									<a href="">
+									<a href="/technology-solutions">
 										{{ item.title ?? item.solution }}
 									</a>
 								</li>
@@ -100,7 +106,6 @@ import db from "@/lib/shared.db";
 							<p>
 								<a href="">
 								HQ TEC, Inc. — United States HQ TEC Technologies Canada Inc. — Canada
-
 								</a>
 							</p>
 						</li>
@@ -122,14 +127,14 @@ import db from "@/lib/shared.db";
 			<div data-section="footer-bottom">
 				<ul>
 					<li><b>Useful Links:</b></li>
-					<li><a href="">DJ PlayNow</a></li>
-					<li><a href="">The Future of DJing</a></li>
-					<li><a href="">LinkedIn</a></li>
+					<li><a href="https://djplaynow.com">DJ PlayNow</a></li>
+					<li><a href="https://kingsleyomukoro.substack.com/">The Future of DJing</a></li>
+					<li><a href="https://www.linkedin.com/company/hq-tec-inc/">LinkedIn</a></li>
 				</ul>
 
 				<ul>
 					<li>
-						<a href="">
+						<a href="https://www.linkedin.com/company/hq-tec-inc/">
 							<svg
 								width="28"
 								height="28"
@@ -148,7 +153,7 @@ import db from "@/lib/shared.db";
 						</a>
 					</li>
 					<li>
-						<a href="">
+						<a href="https://kingsleyomukoro.substack.com/">
 							<svg
 								width="28"
 								height="28"
@@ -194,6 +199,11 @@ footer {
 
 		p {
 			@apply: text-2xl font-medium text-neutral-50 font-hubot max-w-md;
+		}
+
+		@screen lt-md {
+			background-image: v-bind(bgCta);
+			@apply: bg-cover bg-center;
 		}
 	}
 
@@ -258,7 +268,7 @@ footer {
 		[data-section="footer-bottom"] {
 			@apply: py-6 flex flex-wrap gap-6 gap-y-3 items-center justify-between;
 			ul {
-				@apply: flex flex-wrap items-center gap-4 gap-y-2 text-neutral-100;
+				@apply: flex flex-wrap items-center gap-2 gap-y-2 text-neutral-100;
 			}
 		}
 	}
