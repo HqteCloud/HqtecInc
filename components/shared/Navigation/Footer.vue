@@ -86,12 +86,12 @@ import db from "@/lib/shared.db";
 						</li>
 
 						<li>
-							<button data-section="cta-btn">
+							<a data-section="cta-btn" href="/contact">
 								Contact Us
 								<span
 									class="i-solar:arrow-right-outline"
 								></span>
-							</button>
+							</a>
 						</li>
 					</ul>
 					<ul>
@@ -265,6 +265,9 @@ footer {
 
 	[data-section="rights"] {
 		@apply: text-center text-neutral-50 py-5 border-t border-neutral-200/40;
+		p:last-child {
+			@apply: text-neutral-300;
+		}
 	}
 }
 </style>

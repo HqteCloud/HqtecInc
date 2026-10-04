@@ -193,7 +193,7 @@
 		</div>
 
 		<div data-section="cta">
-			<Button variant="secondary">
+			<Button variant="secondary" as="a" href="/contact">
 				Start a conversation
 				<span data-icon class="i-solar:arrow-right-outline"></span>
 			</Button>
@@ -226,7 +226,7 @@
 		</ul>
 
 		<div data-section="cta">
-			<Button variant="secondary">
+			<Button variant="secondary" as="a" href="/contact">
 				Start a conversation
 				<span data-icon class="i-solar:arrow-right-outline"></span>
 			</Button>
@@ -323,7 +323,7 @@
 					</div>
 
 					<div>
-						<Button>Learn About HQ TEC</Button>
+						<Button as="a" href="/about-us">Learn About HQ TEC</Button>
 						<p>
 							Together, we are building a foundation for digital
 							product development, practical technology solutions,
@@ -898,8 +898,17 @@ section[data-section="tech-and-why-us"] {
 section[data-section="north-american-branch"] {
 	@apply: bk-col-root bk-container-[nav] md:py-6 max-md:remove-margin;
 	[data-section="container"] {
-		@apply: bg-neutral-200/50 bk-col-nav;
-		@apply: grid md:grid-cols-2 md:min-h-screen-sm;
+		@apply: bg-neutral-200/50 bk-col-nav relative;
+		@apply: grid md:grid-cols-2 md:min-h-screen-sm_;
+
+		&::before, &::after {
+			@apply: content-empty size-7 bg-background;
+			@apply: absolute bottom-0 left-7;
+		}
+
+		&::after {
+			@apply: bottom-7 left-14;
+		}
 	}
 
 	[data-section="content"] {
@@ -915,12 +924,26 @@ section[data-section="north-american-branch"] {
 		[data-section="spacer"] {
 			@apply: h-full;
 		}
+
+		&::before {
+			@apply: content-empty size-7 bg-background;
+			@apply: absolute top-0 left-0;
+		}
 	}
 
 	[data-section="img"] {
 		@apply: relative h-full;
 		img {
 			@apply: size-full object-contain;
+		}
+
+		&::before, &::after {
+			@apply: content-empty size-7 bg-background;
+			@apply: absolute top-0 right-7;
+		}
+
+		&::after {
+			@apply: top-7 right-14;
 		}
 	}
 }

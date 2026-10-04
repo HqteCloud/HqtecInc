@@ -200,11 +200,18 @@ nav {
 
 			@apply: invisible opacity-0;
 			@apply: transition-opacity duration-150;
+
+			&:hover {
+				@apply: divide-neutral-400!;
+			}
 		}
 
 		> ul > li {
 			@apply: px-2 py-1 whitespace-nowrap;
-			@apply: hover:bg-neutral-100;
+			@apply: hover:bg-neutral-100_;
+			a {
+				@apply: block;
+			}
 		}
 
 		&:hover > ul,
