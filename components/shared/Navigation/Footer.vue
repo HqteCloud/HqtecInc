@@ -203,7 +203,11 @@ footer {
 
 		@screen lt-md {
 			background-image: v-bind(bgCta);
-			@apply: bg-cover bg-center;
+			@apply: bg-cover bg-center z-0 relative py-4;
+
+			&::before {
+				@apply: content-[''] absolute inset-0 bg-black/15 -z-1;
+			}
 		}
 	}
 
