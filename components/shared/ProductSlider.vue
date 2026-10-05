@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import constants from "@/lib/constants/images";
-const { images } = constants;
+import { images } from "@/lib/constants";
 
 const slides = [
 	{

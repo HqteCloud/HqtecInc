@@ -84,6 +84,10 @@ const meta: Config["meta"] = {
 		env: { config: true },
 		effect: toggleSsrRelatedConfig,
 	},
+
+	announcement: {
+		env: { server: true, client: true, config: true },
+	},
 };
 
 const unhead: Config["unhead"] = {
@@ -117,7 +121,7 @@ const unhead: Config["unhead"] = {
 
 	bodyAttrs: {
 		class: ["isolate"],
-	},
+	}
 };
 
 // https://vike.dev/config
@@ -130,6 +134,7 @@ export default {
 	passToClient: ["pageProps", "routeParams", "_piniaInitialState"],
 
 	unhead,
+	announcement: false,
 	// baseAssets: "/client",
 	extends: [],
 } satisfies Config;

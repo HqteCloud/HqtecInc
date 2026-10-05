@@ -144,12 +144,12 @@
 	--font-heading: var(--font-sans);
 }
 
-h1 {
+h1, [data-style="h1"] {
 	@apply: leading-1em font-normal;
 	font-size: clamp(theme('text.6xl.fontSize'), 9vw + 1rem, theme('text.7xl.fontSize'));
 }
 
-h2 {
+h2, [data-style="h2"] {
 	@apply: leading-1em font-medium;
 	font-size: clamp(theme('text.5xl.fontSize'), 6vw + 1rem, theme('text.6xl.fontSize'));
 	&.shrink {
@@ -161,12 +161,12 @@ h2 {
 	}
 }
 
-h3 {
+h3, [data-style="h3"] {
 	@apply: leading-1em font-medium;
 	font-size: clamp(theme('text.3xl.fontSize'), 4vw + 1rem, theme('text.4xl.fontSize'));
 }
 
-h4 {
+h4, [data-style="h4"] {
 	@apply: leading-1em font-medium;
 	font-size: clamp(theme('text.2xl.fontSize'), 3vw + 1rem, theme('text.3xl.fontSize'));
 }

@@ -9,6 +9,11 @@ import { UseHeadInput } from "unhead/types";
 type Component = ComponentPublicInstance; // https://stackoverflow.com/questions/63985658/how-to-type-vue-instance-out-of-definecomponent-in-vue-3/63986086#63986086
 type Page = Component;
 
+type Announcement = {
+	text: string;
+	url?: string;
+}
+
 // https://vike.dev/pageContext#typescript
 declare global {
 	namespace Vike {
@@ -49,7 +54,8 @@ declare global {
 			unhead?: Vike.meta;
 			secrets?: Record<string, any>;
 			stream?: "simple" | "web";
-			pageProps?: Record<string, any>
+			pageProps?: Record<string, any>,
+			announcement?: boolean | Announcement | (() => Announcement);
 		}
 	}
 

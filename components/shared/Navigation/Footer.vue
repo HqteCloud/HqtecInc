@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import db from "@/lib/shared.db";
-import constants from "@/lib/constants/images";
+import { images, solutions } from "@/lib/constants";
 
-const { images } = constants;
 const bgCta = `url(${images.img3.src})`;
 </script>
 
@@ -81,7 +79,7 @@ const bgCta = `url(${images.img3.src})`;
 
 							<ul>
 								<li
-									v-for="item in db.technologySolutions"
+									v-for="item in solutions"
 									:key="item.solution"
 								>
 									<a href="/technology-solutions">

@@ -215,7 +215,7 @@
 
 		<ul data-section="solutions-list">
 			<li
-				v-for="solution in db.technologySolutions"
+				v-for="solution in solutions"
 				:key="solution.solution"
 			>
 				<details name="technology-solution">
@@ -382,14 +382,10 @@
 			</ul>
 		</div>
 	</section>
-	<Footer />
 </template>
 
 <script lang="ts" setup>
-import constants from "@/lib/constants/images";
-import db from "@/lib/shared.db";
-
-const { images } = constants;
+import { images, solutions } from "@/lib/constants";
 
 const principles = [
 	{
@@ -443,8 +439,6 @@ const process = [
 </script>
 
 <style lang="scss">
-@use "../global.scss";
-
 main[data-section="hero"] {
 	background: linear-gradient(180deg, #000000 0%, #7689de 100%);
 	@apply bk-col-root;

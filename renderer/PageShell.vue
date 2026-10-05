@@ -8,6 +8,7 @@
     </div>
   </div>
   <div viewport="teleports"></div>
+  <div hidden :data-page-name="$pageContext.config.pageProps?.title" :data-page-pathname="$pageContext.urlPathname"></div>
 </template>
 
 <style lang="scss">

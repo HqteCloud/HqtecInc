@@ -46,6 +46,4 @@ const technologySolutions = [
 	}
 ]
 
-export default {
-	technologySolutions
-}
+export default technologySolutions;

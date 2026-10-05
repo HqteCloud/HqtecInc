@@ -1,6 +1,6 @@
 <script setup lang="tsx">
 const links = [
-	{ href: "/about", text: "About HQ TEC, Inc", class: "normal-case!" },
+	{ href: "/about-us", text: "About HQ TEC, Inc", class: "normal-case!" },
 	{
 		href: "/products",
 		text: "Products",
@@ -18,6 +18,13 @@ const links = [
 	{ href: "/technology-solutions", text: "Technology Solutions" },
 	{ href: "/insights", text: "Insights" },
 ];
+
+const context = usePageContext();
+const announcement = computed(() => {
+	const value = context.value.config.announcement;
+	if(typeof value === "function") return value();
+	return value;
+});
 
 useGsap(
 	({ gsap, breakpoints }) => {
@@ -140,11 +147,10 @@ useGsap(
 			</div>
 		</nav>
 	</header>
-	<div data-section="annoucement">
+	<div data-section="annoucement" v-if="announcement">
 		<p>
-			<a href="https://djplaynow.com/download"
-				>Version 1.0.1 of DJ PlayNow is live now | Music Query is now
-				optimized for global search</a
+			<a :href="announcement?.url"
+				> {{ announcement.text }}</a
 			>
 		</p>
 	</div>
