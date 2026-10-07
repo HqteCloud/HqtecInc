@@ -171,6 +171,12 @@ h4, [data-style="h4"] {
 	font-size: clamp(theme('text.2xl.fontSize'), 3vw + 1rem, theme('text.3xl.fontSize'));
 }
 
+h5, [data-style="h5"] {
+	@apply: leading-1em font-medium;
+	font-size: clamp(theme('text.2xl.fontSize'), 3vw + 1rem, theme('text.3xl.fontSize'));
+}
+
+
 .btn-primary-gradient {
 	--first-stop: 0%;
 	--last-stop: 100%;

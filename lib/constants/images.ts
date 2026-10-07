@@ -18,6 +18,9 @@ import img15 from '@/assets/djplaynow-logo-small.webp'
 
 import img16 from '@/assets/north-american-map.png';
 
+import img17 from '@/assets/united-states-flag.webp';
+import img18 from '@/assets/canada-flag.webp';
+
 const images = {
 	img1: {
 	  filename: 'commercial-office-network-installation.png',
@@ -98,6 +101,16 @@ const images = {
 		filename: 'north-american-map.png',
 		alt: 'North American map with HQ TEC locations highlighted',
 		src: img16
+	},
+	img17: {
+		filename: 'united-states-flag.webp',
+		alt: 'United States flag',
+		src: img17
+	},
+	img18: {
+		filename: 'canada-flag.webp',
+		alt: 'Canada flag',
+		src: img18
 	},
 };
 

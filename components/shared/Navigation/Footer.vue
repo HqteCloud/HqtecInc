@@ -36,19 +36,19 @@ const bgCta = `url(${images.img3.src})`;
 
 							<ul>
 								<li>
-									<a href="">Home</a>
+									<a href="/">Home</a>
 								</li>
 								<li>
-									<a href="">About HQ TEC</a>
+									<a href="/about-us">About HQ TEC</a>
 								</li>
 								<li>
-									<a href="">Products & Platforms</a>
+									<a href="/products">Products & Platforms</a>
 								</li>
 								<li>
-									<a href="">Technology Solutions</a>
+									<a href="/technology-solutions">Technology Solutions</a>
 								</li>
 								<li>
-									<a href="">Insights</a>
+									<a href="/insights">Insights</a>
 								</li>
 							</ul>
 						</li>
