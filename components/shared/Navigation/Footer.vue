@@ -187,12 +187,12 @@ const bgCta = `url(${images.img3.src})`;
 footer {
 	@apply: bg-tertiary bk-col-root;
 	--nav-val: 70rem;
+
 	[data-section="cta"] {
 		@apply: bk-container-[nav,full] border-b border-neutral-500;
 
 		& > div {
-			@apply: flex flex-col sm:flex-row items-start justify-between gap-x-4 gap-y-12 md:px-4 py-4 bk-col-nav;
-			@apply: md:border-x border-neutral-500;
+			@apply: flex flex-col sm:flex-row items-start justify-between gap-x-4 gap-y-12 md:px-4 py-4 bk-col-nav md:border-x border-neutral-500;
 		}
 
 		p {
@@ -201,7 +201,7 @@ footer {
 
 		@screen lt-md {
 			background-image: v-bind(bgCta);
-			@apply: bg-cover bg-center z-0 relative py-4;
+			@apply: relative z-0 py-4 bg-cover bg-center;
 
 			&::before {
 				@apply: content-[''] absolute inset-0 bg-black/15 -z-1;
@@ -213,20 +213,22 @@ footer {
 		@apply: bk-container-[nav] *:bk-col-nav pb-9;
 
 		[data-section="footer-content"] {
-			@apply: grid md:grid-cols-[auto_auto] gap-20 lg:gap-42 justify-between items-end py-12;
-			@apply: border-b border-neutral-200/40 pb-9;
+			@apply: grid md:grid-cols-[auto_auto] justify-between items-end gap-20 lg:gap-42 py-12 pb-9 border-b border-neutral-200/40;
+
 			img {
 				@apply: brightness-0 invert max-md:w-50;
 			}
 		}
 
 		[data-section="footer-links"] {
-			@apply: grid sm:grid-cols-2 md:grid-cols-[repeat(3,_auto)] gap-9 md:gap-4 items-end justify-start;
+			@apply: grid sm:grid-cols-2 md:grid-cols-[repeat(3,_auto)] items-end justify-start gap-9 md:gap-4;
 
 			ul {
 				@apply: grid gap-6;
+
 				header {
 					@apply: mb-6;
+
 					p {
 						@apply: text-neutral-300 font-medium;
 					}
@@ -243,11 +245,14 @@ footer {
 
 			& > ul:last-child {
 				@apply: space-y-4!;
+
 				li p {
 					@apply: w-fit;
+
 					&:first-child {
 						@apply: text-neutral-300;
 					}
+
 					&:nth-child(2) {
 						@apply: text-neutral-50;
 					}
@@ -255,20 +260,17 @@ footer {
 			}
 
 			[data-section="cta-btn"] {
-				@apply: bg-indigo-900 text-white font-medium py-1 px-2 rounded-lg;
-				@apply: flex items-center gap-3 justify-between w-full;
-				@apply: border border-neutral-400;
+				@apply: flex w-full items-center justify-between gap-3 rounded-lg border border-neutral-400 bg-indigo-900 px-2 py-1 font-medium text-white;
 			}
 
-			&:has(a:hover) {
-				a:not(:hover) {
-					@apply: opacity-50;
-				}
+			&:has(a:hover) a:not(:hover) {
+				@apply: opacity-50;
 			}
 		}
 
 		[data-section="footer-bottom"] {
-			@apply: py-6 flex flex-wrap gap-6 gap-y-3 items-center justify-between;
+			@apply: flex flex-wrap items-center justify-between gap-6 gap-y-3 py-6;
+
 			ul {
 				@apply: flex flex-wrap items-center gap-2 gap-y-2 text-neutral-100;
 			}
@@ -276,7 +278,8 @@ footer {
 	}
 
 	[data-section="rights"] {
-		@apply: text-center text-neutral-50 py-5 border-t border-neutral-200/40;
+		@apply: border-t border-neutral-200/40 py-5 text-center text-neutral-50;
+
 		p:last-child {
 			@apply: text-neutral-300;
 		}
