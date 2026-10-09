@@ -21,6 +21,20 @@ import img16 from '@/assets/north-american-map.png';
 import img17 from '@/assets/united-states-flag.webp';
 import img18 from '@/assets/canada-flag.webp';
 
+import img19 from "@/assets/patterned-background.webp";
+import img20 from "@/assets/mobile-phone-partly-inside-pocket.png"
+
+import img21 from "@/assets/DJ PlayNow - Full Logo.png";
+import img22 from "@/assets/placeholder-icon.webp";
+
+import img23 from "@/assets/djplaynow-previews-screens.webp";
+import img24 from "@/assets/student-management-system-development-preview.webp";
+
+import img25 from "@/assets/djplaynow-ambassador-dj-wearing-djplaynow-merch.webp";
+import img26 from "@/assets/djplaynow-appstore-preview.webp";
+
+import img27 from "@/assets/hallway-background.jpg"
+
 const images = {
 	img1: {
 	  filename: 'commercial-office-network-installation.png',
@@ -112,6 +126,51 @@ const images = {
 		alt: 'Canada flag',
 		src: img18
 	},
+	img19: {
+		filename: 'patterned-background.webp',
+		alt: 'Pattern background',
+		src: img19
+	},
+	img20: {
+		filename: "mobile-phone-partly-inside-pocket.png",
+		alt: "Mobile Phone showing the DJ PlayNow mobile app homescreen, being inserted into the bottom pocket of a trouser",
+		src: img20
+	},
+	img21: {
+		filename: "DJ PlayNow - Full Logo.png",
+		alt: 'DJ PlayNow full logo coloured',
+		src: img21
+	},
+	img22: {
+		filename: "placeholder-icon.webp",
+		alt: "Placeholder Icon",
+		src: img22
+	},
+	img23: {
+		filename: "djplaynow-previews-screens.webp",
+		alt: "DJ PlayNow Preview screens",
+		src: img23
+	},
+	img24: {
+		filename: "student-management-system-development-preview.webp",
+		alt: "Student Management System Development Preview",
+		src: img24
+	},
+	img25: {
+		filename: "djplaynow-ambassador-dj-wearing-djplaynow-merch.webp",
+		alt: "A DJ PlayNow ambassador DJ, wearing DJ PlayNow merchs, a hat and tshirt",
+		src: img25
+	},
+	img26: {
+		filename: "djplaynow-appstore-preview.webp",
+		alt: "A screenshot mockup of DJ PlayNow app store page",
+		src: img26
+	},
+	img27: {
+		filename: 'hallway-background.jpg',
+		alt: 'College Hallway image',
+		src: img27
+	}
 };
 
 export default images

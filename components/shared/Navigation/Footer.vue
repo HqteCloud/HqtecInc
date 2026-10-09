@@ -60,10 +60,10 @@ const bgCta = `url(${images.img3.src})`;
 
 							<ul>
 								<li>
-									<a href="">DJ PlayNow</a>
+									<a href="/djplaynow">DJ PlayNow</a>
 								</li>
 								<li>
-									<a href=""
+									<a href="/student-management-system"
 										>Student Management System — Planned for
 										November 2027</a
 									>

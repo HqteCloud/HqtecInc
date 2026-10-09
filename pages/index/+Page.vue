@@ -438,7 +438,7 @@ const process = [
 ];
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main[data-section="hero"] {
 	background: linear-gradient(180deg, #000000 0%, #7689de 100%);
 	@apply bk-col-root;

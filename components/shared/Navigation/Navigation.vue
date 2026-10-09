@@ -93,7 +93,7 @@ useGsap(
 		<nav>
 			<div data-section="navigation-bar">
 				<div data-section="links">
-					<a href="/"><img src="/logo.webp" class="max-sm:w-23" /></a>
+					<a href="/" data-section="logo"><img src="/logo.webp" class="max-sm:w-23" /></a>
 					<ul>
 						<li v-for="link in links" :key="link.href">
 							<template v-if="link.nested">
