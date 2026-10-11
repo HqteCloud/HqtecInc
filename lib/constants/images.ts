@@ -33,7 +33,8 @@ import img24 from "@/assets/student-management-system-development-preview.webp";
 import img25 from "@/assets/djplaynow-ambassador-dj-wearing-djplaynow-merch.webp";
 import img26 from "@/assets/djplaynow-appstore-preview.webp";
 
-import img27 from "@/assets/hallway-background.jpg"
+import img27 from "@/assets/hallway-background.jpg";
+import img28 from "@/assets/computer-software.jpeg"
 
 const images = {
 	img1: {
@@ -170,6 +171,11 @@ const images = {
 		filename: 'hallway-background.jpg',
 		alt: 'College Hallway image',
 		src: img27
+	},
+	img28: {
+		filename: 'computer-software.jpeg',
+		alt: 'Floating laptop with dashboard imagery surrounding',
+		src: img28
 	}
 };
 

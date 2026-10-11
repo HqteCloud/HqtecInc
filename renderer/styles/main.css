@@ -152,7 +152,9 @@ h1, [data-style="h1"] {
 h2, [data-style="h2"] {
 	@apply: leading-1em font-medium;
 	font-size: clamp(theme('text.5xl.fontSize'), 6vw + 1rem, theme('text.6xl.fontSize'));
-	&.shrink {
+
+	/*&.shrink {*/
+	& {
 		font-size: clamp(
 			theme("text.4xl.fontSize"),
 			6vw + 1rem,
