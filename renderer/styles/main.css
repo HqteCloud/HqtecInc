@@ -208,3 +208,8 @@ h5, [data-style="h5"] {
 		--first-stop: 70%;
 	}
 }
+
+
+html {
+	scroll-behavior: smooth;
+}

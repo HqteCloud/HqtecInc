@@ -40,21 +40,23 @@ const bgCta = `url(${images.img3.src})`;
 
 							<ul>
 								<li>
-									<a href="/">Home</a>
+									<Link href="/">Home</Link>
 								</li>
 								<li>
-									<a href="/about-us">About HQ TEC</a>
+									<Link href="/about-us">About HQ TEC</Link>
 								</li>
 								<li>
-									<a href="/products">Products & Platforms</a>
-								</li>
-								<li>
-									<a href="/technology-solutions"
-										>Technology Solutions</a
+									<Link href="/products"
+										>Products & Platforms</Link
 									>
 								</li>
 								<li>
-									<a href="/insights">Insights</a>
+									<Link href="/technology-solutions"
+										>Technology Solutions</Link
+									>
+								</li>
+								<li>
+									<Link href="/insights">Insights</Link>
 								</li>
 							</ul>
 						</li>
@@ -88,27 +90,27 @@ const bgCta = `url(${images.img3.src})`;
 									v-for="item in solutions"
 									:key="item.solution"
 								>
-									<a href="/technology-solutions">
+								<Link :href="`/technology-solutions#${item.solution.replaceAll(' ', '-').toLowerCase()}`">
 										{{ item.title ?? item.solution }}
-									</a>
+								</Link>
 								</li>
 							</ul>
 						</li>
 
 						<li>
-							<a data-section="cta-btn" href="/contact">
+						<Link data-section="cta-btn" href="/contact">
 								Contact Us
 								<span
 									class="i-solar:arrow-right-outline"
 								></span>
-							</a>
+						</Link>
 						</li>
 					</ul>
 					<ul>
 						<li>
 							<p>HQ TEC North America</p>
 							<p>
-								<a href="">
+								<a>
 									HQ TEC, Inc. — United States HQ TEC
 									Technologies Canada Inc. — Canada
 								</a>
@@ -201,6 +203,11 @@ const bgCta = `url(${images.img3.src})`;
 </template>
 
 <style lang="scss" scoped>
+
+.router-link-active {
+	@apply: before:content-['>_'] underline underline-offset-6;
+}
+
 footer {
 	@apply: bg-tertiary bk-col-root;
 	--nav-val: 70rem;

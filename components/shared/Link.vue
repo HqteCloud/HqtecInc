@@ -1,17 +1,53 @@
 <template>
-  <a :class="{ 'router-link-active': isActive }">
+  <a :class="{ 'router-link-active': isActive }" v-bind="$attrs">
     <slot />
   </a>
 </template>
-<style scoped>
-</style>
+
 <script lang="ts" setup>
-import { useAttrs, computed } from 'vue'
+import { computed, onMounted, onBeforeUnmount, ref, useAttrs } from 'vue'
 
 const pageContext = usePageContext()
-const { href } = useAttrs() as { href: string }
+const attrs = useAttrs()
+
+const currentHash = ref('')
+
+const updateHash = () => {
+  currentHash.value = window.location.hash
+}
+
+onMounted(() => {
+  updateHash()
+  window.addEventListener('hashchange', updateHash)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('hashchange', updateHash)
+})
+
 const isActive = computed(() => {
   const { urlPathname } = pageContext.value
-  return href === '/' ? urlPathname === href : urlPathname.startsWith(href)
+  const href = attrs.href as string | undefined
+
+  if (!href) return false
+
+  const [pathname, hash] = href.split('#')
+
+  const pathMatches =
+    pathname === '/'
+      ? urlPathname === '/'
+      : urlPathname.startsWith(pathname)
+
+  if (!pathMatches) return false
+
+  // If a hash is specified, it must also match.
+  if (hash !== undefined) {
+    return currentHash.value === `#${hash}`
+  }
+
+  return true
 })
 </script>
+
+<style scoped>
+</style>

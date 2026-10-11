@@ -61,6 +61,8 @@ const process = [
 	</section>
 
 	<section data-section="solutions">
+		<span class="i-solar:users-group-two-rounded-line-duotone text-4xl mb-2 text-tertiary"></span>
+
 		<div data-section="pill">
 			<p>What it takes to make Technology work</p>
 		</div>
@@ -83,7 +85,7 @@ const process = [
 
 	<section data-section="services">
 		<ul>
-			<li v-for="item in solutions" :key="item.solution">
+			<li v-for="item in solutions" :key="item.solution" :id="item.solution.replaceAll(' ', '-').toLowerCase()">
 				<div data-section="main">
 					<div data-section="img" data-clip="top-right">
 						<img :src="item.img.src" :alt="item.img.alt" />
