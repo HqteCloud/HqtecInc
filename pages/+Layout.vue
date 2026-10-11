@@ -1,5 +1,5 @@
 <template>
-	<Navigation />
+	<Navigation :key="$pageContext.urlPathname" />
 	<slot />
 	<Footer />
 </template>

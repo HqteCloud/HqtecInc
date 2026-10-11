@@ -43,6 +43,27 @@ const tgContent = computed(() => {
 		content: "To grow HQ TEC as a technology company known for useful digital products, sound implementation, and the ability to connect software with the infrastructure that makes it work."
 	}
 })
+
+const team = [
+	{
+		name: "Kylee McVicker",
+		position: 'Vice President',
+		bio: "Kylee McVicker is responsible for the strategic design, development, and implementation of HQ Tec’s vision, managing plans, schedules, policies, and programs to achieve company goals. She ensures effective communication with clients and vendors, oversees all processes, and integrates emerging technologies. Kylee directs all teams and leads the development of mission-critical applications. She holds a B.A. in International Studies with minors in International Economics and Spanish, and is pursuing a Master’s degree at Georgetown University.",
+		thumbnail: images.img31
+	},
+	{
+		name: "Ejiro Mukoro",
+		position: 'Chief Operations Officer',
+		bio: "Ejiro Mukoro COO of hqTEC, Inc., drives the companys growth and operational excellence with his strategic vision and unique blend of artistic talent and technical expertise. As an accomplished artist and graphic designer, he integrates visual aesthetics with software development, creating functional and visually compelling solutions.\nHis innovative approach ensures hqTECs projects stand out, offering unparalleled value. His commitment to excellence and ability to craft winning strategies align projects with high standards, enhancing productivity and business growth. Ejiros visionary leadership and artistic insight are pivotal to hqTECs success.",
+		thumbnail: images.img30
+	},
+	{
+		name: "Chuko Mukoro",
+		position: 'Product Leader & Creative Visionary',
+		bio: "Chuko Mukoro leads product development at hqTEC, translating client needs into innovative software solutions. He leverages his product management expertise and animation skills to bridge functionality and aesthetics, ensuring user-friendly and visually engaging products. His leadership drives timely, high-quality releases that keep hqTEC at the forefront of technological innovation.",
+		thumbnail: images.img29
+	},
+]
 </script>
 
 <template>
@@ -274,7 +295,29 @@ const tgContent = computed(() => {
 		</div>
 	</section>
 
-	<section data-section="mission-vision">
+	<section data-section="mission-vision" id="leadership">
+
+		<div data-section="container" data-context="leadership">
+			<h3>Meet Leadership</h3>
+
+			<ul>
+				<li v-for="item in team" :key="item.name">
+					<img :src="item.thumbnail.src" :alt="item.thumbnail.alt" />
+
+					<div>
+						<h4>{{ item.name }}</h4>
+						<p>{{ item.position }}</p>
+
+						<Button variant="secondary" class="bio">Read Bio</Button>
+					</div>
+
+					<div class="bio-content">
+						<p>{{ item.bio }}</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
 		<div data-section="container">
 			<div data-type="toggle">
 				<div data-section="pill" :data-selected="toggleMission" @click="toggleFn(true)">
@@ -486,7 +529,7 @@ body:has([data-page-pathname="/about-us"]) {
 	}
 }
 [data-section="our-products"] {
-	@apply: py-32 bk-col-root bg-neutral-100;
+	@apply: py-32 bk-col-root lg:bk-col-nav bg-neutral-100;
 	@apply: bk-container-[nav,full] relative;
 
 	--size: calc(var(--spacing) * 4);
@@ -874,6 +917,44 @@ body:has([data-page-pathname="/about-us"]) {
 				&::after {
 					@apply: bottom-0 right-[var(--size)];
 				}
+			}
+		}
+	}
+
+	[data-context="leadership"] {
+		@apply: flex items-start justify-between mb-12;
+
+		ul {
+			@apply: grid gap-x-3 gap-y-9 mt-4;
+
+			grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+
+			li {
+				@apply: relative;
+				div {
+					@apply: mt-3;
+
+					.bio {
+						@apply: absolute top-50% left-50% translate--50% opacity-0;
+					}
+				}
+
+				&:hover {
+					.bio {
+						@apply: opacity-100;
+					}
+				}
+
+				&:focus-within {
+					.bio-content {
+						@apply: z-1 h-auto;
+					}
+				}
+			}
+
+			.bio-content {
+				@apply: bg-white p-2 text-center transition-all duration-400;
+				@apply: absolute bottom-0 left-2 right-2 -z-1;
 			}
 		}
 	}

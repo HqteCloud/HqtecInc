@@ -1,6 +1,16 @@
 <script setup lang="tsx">
 const links = [
-	{ href: "/about-us", text: "About HQ TEC, Inc", class: "normal-case!" },
+	{
+		href: "/about-us",
+		text: "About HQ TEC, Inc",
+		class: "normal-case!",
+		nested: [
+			{
+				href: "/about-us#leadership",
+				text: 'Leadership'
+			}
+		]
+	},
 	{
 		href: "/products",
 		text: "Products",
@@ -20,10 +30,10 @@ const links = [
 ];
 
 const context = usePageContext();
-const announcement = computed(() => {
+const announcement = computed<({ text: string, url?: string } | undefined)>(() => {
 	const value = context.value.config.announcement;
-	if(typeof value === "function") return value();
-	return value;
+	if(typeof value === "function") return value() as any;
+	return value as unknown as any;
 });
 
 useGsap(
@@ -201,7 +211,7 @@ nav {
 			@apply: absolute left--2 top-full z-1;
 			@apply: grid gap-0;
 			@apply: border_ border-neutral-200;
-			@apply: bg-white shadow-sm_;
+			@apply: bg-white shadow-sm_ min-w-full;
 			@apply: divide-y! divide-neutral-200 divide-solid;
 
 			@apply: invisible opacity-0;

@@ -34,7 +34,11 @@ import img25 from "@/assets/djplaynow-ambassador-dj-wearing-djplaynow-merch.webp
 import img26 from "@/assets/djplaynow-appstore-preview.webp";
 
 import img27 from "@/assets/hallway-background.jpg";
-import img28 from "@/assets/computer-software.jpeg"
+import img28 from "@/assets/computer-software.jpeg";
+
+import img29 from "@/assets/chuko2-DcT0hQtk.jpeg";
+import img30 from "@/assets/ejiro2-CEkoObrK.jpeg";
+import img31 from "@/assets/kylee-BwWid4uz.webp";
 
 const images = {
 	img1: {
@@ -176,6 +180,21 @@ const images = {
 		filename: 'computer-software.jpeg',
 		alt: 'Floating laptop with dashboard imagery surrounding',
 		src: img28
+	},
+	img29: {
+		filename: "chuko2-DcT0hQtk.jpeg",
+		alt: "Product Leader & Creative Visionary at HQ TEC, Inc",
+		src: img29
+	},
+	img30: {
+		filename: "ejiro2-CEkoObrK.jpeg",
+		alt: "Chief Operating Officer at HQ TEC, Inc",
+		src: img30
+	},
+	img31: {
+		filename: "kylee-BwWid4uz.webp",
+		alt: "Vice President at HQ TEC, Inc",
+		src: img31
 	}
 };
 
