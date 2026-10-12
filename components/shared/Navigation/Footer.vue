@@ -204,7 +204,7 @@ const bgCta = `url(${images.img3.src})`;
 
 <style lang="scss" scoped>
 
-.router-link-active {
+.router-link-active:not([data-section="cta-btn"]) {
 	@apply: before:content-['>_'] underline underline-offset-6;
 }
 

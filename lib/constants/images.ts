@@ -39,6 +39,7 @@ import img28 from "@/assets/computer-software.jpeg";
 import img29 from "@/assets/chuko2-DcT0hQtk.jpeg";
 import img30 from "@/assets/ejiro2-CEkoObrK.jpeg";
 import img31 from "@/assets/kylee-BwWid4uz.webp";
+import img32 from "@/assets/komukoro.jpeg";
 
 const images = {
 	img1: {
@@ -195,6 +196,11 @@ const images = {
 		filename: "kylee-BwWid4uz.webp",
 		alt: "Vice President at HQ TEC, Inc",
 		src: img31
+	},
+	img32: {
+		filename: "komukoro.jpeg",
+		alt: "President at HQ TEC, Inc",
+		src: img32
 	}
 };
 

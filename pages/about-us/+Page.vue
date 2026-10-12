@@ -46,21 +46,27 @@ const tgContent = computed(() => {
 
 const team = [
 	{
+		name: "Kingsley Mukoro",
+		position: 'President',
+		bio: "Kingsley Mukoro founded HQ TEC, Inc. in 2020 to develop practical technology solutions that help businesses operate effectively and create better experiences for their customers. As President, he leads the company’s strategic direction, business development, and growth across the United States and Canada.\n\nDrawing on experience in technology, education, public service, and operations management, Kingsley brings a broad perspective to building and leading the company. His work includes DJ PlayNow, a platform that connects DJs and audiences through interactive music requests and engagement. His leadership emphasizes accountable execution, strong partnerships, and sustainable growth.",
+		thumbnail: images.img32
+	},
+	{
 		name: "Kylee McVicker",
 		position: 'Vice President',
-		bio: "Kylee McVicker is responsible for the strategic design, development, and implementation of HQ Tec’s vision, managing plans, schedules, policies, and programs to achieve company goals. She ensures effective communication with clients and vendors, oversees all processes, and integrates emerging technologies. Kylee directs all teams and leads the development of mission-critical applications. She holds a B.A. in International Studies with minors in International Economics and Spanish, and is pursuing a Master’s degree at Georgetown University.",
+		bio: "Kylee McVicker helps turn HQ TEC, Inc.’s strategic priorities into coordinated action. She oversees project planning, supports team execution, and manages communication with clients and vendors to keep work aligned with business goals. Her responsibilities also include supporting application development and evaluating emerging technologies for practical business use.\n\nKylee holds a master’s degree from Georgetown University and a Bachelor of Arts in International Studies, with minors in International Economics and Spanish. She brings an international perspective and a structured, collaborative approach to the company’s operations and projects.",
 		thumbnail: images.img31
 	},
 	{
 		name: "Ejiro Mukoro",
 		position: 'Chief Operations Officer',
-		bio: "Ejiro Mukoro COO of hqTEC, Inc., drives the companys growth and operational excellence with his strategic vision and unique blend of artistic talent and technical expertise. As an accomplished artist and graphic designer, he integrates visual aesthetics with software development, creating functional and visually compelling solutions.\nHis innovative approach ensures hqTECs projects stand out, offering unparalleled value. His commitment to excellence and ability to craft winning strategies align projects with high standards, enhancing productivity and business growth. Ejiros visionary leadership and artistic insight are pivotal to hqTECs success.",
+		bio: "Ejiro Mukoro supports HQ TEC, Inc.’s daily operations, project coordination, and delivery standards. He works across the team to align priorities, strengthen workflows, and keep projects focused on client needs and company objectives.\n\nWith a background in illustration and graphic design, Ejiro brings a creative perspective to technology development. His approach connects visual clarity with practical functionality, helping the team create solutions that are thoughtfully designed and easy to use. He emphasizes collaboration, attention to detail, and consistent execution.",
 		thumbnail: images.img30
 	},
 	{
 		name: "Chuko Mukoro",
-		position: 'Product Leader & Creative Visionary',
-		bio: "Chuko Mukoro leads product development at hqTEC, translating client needs into innovative software solutions. He leverages his product management expertise and animation skills to bridge functionality and aesthetics, ensuring user-friendly and visually engaging products. His leadership drives timely, high-quality releases that keep hqTEC at the forefront of technological innovation.",
+		position: 'Product Owner',
+		bio: "Chuko Mukoro helps shape HQ TEC, Inc.’s products by translating client and user needs into clear requirements and development priorities. He works with design and development teams to guide products from concept through delivery, keeping usability, functionality, and visual presentation central to the process.\n\nHis background in animation brings an understanding of storytelling, movement, and visual communication to product development. Chuko focuses on making complex ideas easier to understand and helping the team build intuitive, engaging experiences that serve a clear purpose.",
 		thumbnail: images.img29
 	},
 ]

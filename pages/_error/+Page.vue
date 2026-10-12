@@ -9,7 +9,7 @@
 				occurred. Try the links below.
 			</p>
 
-			<ButtonGroup>
+			<div>
 				<Button variant="outline" as="a" href="/">Home</Button>
 				<Button
 					variant="outline"
@@ -24,7 +24,7 @@
 					href="/contact"
 					>Contact Us</Button
 				>
-			</ButtonGroup>
+			</div>
 	</div>
 </template>
 
@@ -51,7 +51,7 @@ if (!abortReason) {
 	}
 
 	& > div {
-		/*@apply: flex items-center flex-wrap;*/
+		@apply: flex items-center flex-wrap;
 	}
 
 	svg {

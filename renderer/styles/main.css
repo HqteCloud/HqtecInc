@@ -178,7 +178,6 @@ h5, [data-style="h5"] {
 	font-size: clamp(theme('text.2xl.fontSize'), 3vw + 1rem, theme('text.3xl.fontSize'));
 }
 
-
 .btn-primary-gradient {
 	--first-stop: 0%;
 	--last-stop: 100%;
@@ -208,7 +207,6 @@ h5, [data-style="h5"] {
 		--first-stop: 70%;
 	}
 }
-
 
 html {
 	scroll-behavior: smooth;
