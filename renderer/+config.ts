@@ -91,7 +91,6 @@ const meta: Config["meta"] = {
 };
 
 const unhead: Config["unhead"] = {
-	titleTemplate: "HQ TEC, Inc - %s",
 	link: [
 		{
 			href: "/favicon-dark.svg",

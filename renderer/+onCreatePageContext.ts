@@ -2,7 +2,7 @@ import { createPinia, Pinia, StateTree } from "pinia";
 import { createHead } from "@unhead/vue/server";
 import { createHead as createHeadClient } from "@unhead/vue/client";
 import type { PageContext, PageContextServer } from "vike/types";
-import { CanonicalPlugin } from "unhead/plugins";
+import { CanonicalPlugin, InferSeoMetaPlugin } from "unhead/plugins";
 
 export async function onCreatePageContext(pageContext: PageContext) {
 	var canonicalHost = pageContext.urlParsed.hostname ?? undefined;
@@ -10,7 +10,7 @@ export async function onCreatePageContext(pageContext: PageContext) {
 		canonicalHost = window.location.hostname;
 
 	const headOpts: Parameters<typeof createHead>[0] = {
-		plugins: [CanonicalPlugin({ canonicalHost })],
+		plugins: [CanonicalPlugin({ canonicalHost }), InferSeoMetaPlugin()],
 	};
 	pageContext.store = createPinia();
 
