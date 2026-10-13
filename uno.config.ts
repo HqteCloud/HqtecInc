@@ -82,7 +82,8 @@ export default defineConfig({
 			},
 			primary: {
 				light: '#C5CAE8'
-			}
+			},
+			athens: "#F2F2F6"
 		},
 		breakpoint: {
 			...breakpoint,

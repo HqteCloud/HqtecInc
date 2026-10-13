@@ -354,7 +354,9 @@
 				<div data-section="pill">
 					<p>News & Events</p>
 				</div>
-				<h3>HQ TEC Insights</h3>
+				<h3>
+					<a href="/insights">HQ TEC Insights</a>
+				</h3>
 			</div>
 			<ul data-section="articles">
 				<li
@@ -898,7 +900,7 @@ section[data-section="north-american-branch"] {
 	}
 
 	[data-section="container"] {
-		@apply: bg-neutral-200/50 bk-col-nav relative;
+		@apply: bg-athens bk-col-nav relative;
 		@apply: grid md:grid-cols-2 md:min-h-screen-sm_;
 
 		&::before, &::after {
@@ -954,6 +956,10 @@ section[data-section="north-american-branch"] {
 		@apply: bk-col-full text-xl text-center leading-6;
 	}
 
+	h3 {
+		@apply: hover:underline underline-accent;
+	}
+
 	[data-section="news-and-events"] {
 		@apply: bk-col-nav space-y-6!;
 
@@ -967,7 +973,7 @@ section[data-section="north-american-branch"] {
 	}
 
 	[data-section="article-item"] {
-		@apply: p-3 bg-neutral-100 relative transition-all;
+		@apply: p-3 bg-athens relative transition-all;
 		@apply: overflow-clip z-0;
 
 		& > a {
@@ -982,7 +988,7 @@ section[data-section="north-american-branch"] {
 		}
 
 		[data-section="img"] {
-			--color-1: theme("colors.neutral.100");
+			--color-1: theme("colors.athens");
 			--color-2: color-mix(in srgb, theme("colors.accent.foreground"), #000 10%);
 		}
 

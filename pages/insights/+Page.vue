@@ -144,7 +144,7 @@ body:has([data-page-pathname="/insights"]) {
 		}
 
 		li {
-			@apply: p-2 bg-neutral-100;
+			@apply: p-2 bg-athens;
 
 			h3 {
 				@apply: font-medium uppercase text-accent;

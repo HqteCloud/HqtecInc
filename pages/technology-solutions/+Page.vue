@@ -30,9 +30,6 @@ const process = [
 </script>
 
 <template>
-
-
-
 	<section data-section="hero">
 		<div data-section="content">
 			<div data-section="text">
@@ -40,13 +37,18 @@ const process = [
 					The Work Between “We Need It” and “It Works.”
 				</h1>
 				<p>
-					HQ TEC works across software, cloud services, networks, cabling, site surveys, equipment deployment, security systems, and support to help organizations move from a requirement to a working environment
+					HQ TEC works across software, cloud services, networks,
+					cabling, site surveys, equipment deployment, security
+					systems, and support to help organizations move from a
+					requirement to a working environment
 				</p>
 			</div>
 
 			<div data-section="btn-group">
 				<Button as="a" href="#services">Explore Our Solutions</Button>
-				<Button variant="secondary" as="a" href="/contact">Discuss A Project</Button>
+				<Button variant="secondary" as="a" href="/contact"
+					>Discuss A Project</Button
+				>
 
 				<div data-section="clip-art">
 					<div></div>
@@ -64,7 +66,9 @@ const process = [
 	<div data-section="trigger"></div>
 
 	<section data-section="solutions">
-		<span class="i-solar:users-group-two-rounded-line-duotone text-4xl mb-2 text-tertiary"></span>
+		<span
+			class="i-solar:users-group-two-rounded-line-duotone text-4xl mb-2 text-tertiary"
+		></span>
 
 		<div data-section="pill">
 			<p>What it takes to make Technology work</p>
@@ -72,7 +76,12 @@ const process = [
 
 		<h2>A working solution is more than the technology you choose.</h2>
 
-		<p>A requirement can start with software, infrastructure, security, connectivity, or a specific operational problem. Getting from that starting point to a working system can involve planning, deployment, integration, configuration, and ongoing support.</p>
+		<p>
+			A requirement can start with software, infrastructure, security,
+			connectivity, or a specific operational problem. Getting from that
+			starting point to a working system can involve planning, deployment,
+			integration, configuration, and ongoing support.
+		</p>
 
 		<ul>
 			<li v-for="item in solutions" :key="item.solution">
@@ -88,7 +97,11 @@ const process = [
 
 	<section data-section="services" id="services">
 		<ul>
-			<li v-for="item in solutions" :key="item.solution" :id="item.solution.replaceAll(' ', '-').toLowerCase()">
+			<li
+				v-for="item in solutions"
+				:key="item.solution"
+				:id="item.solution.replaceAll(' ', '-').toLowerCase()"
+			>
 				<div data-section="main">
 					<div data-section="img" data-clip="top-right">
 						<img :src="item.img.src" :alt="item.img.alt" />
@@ -103,7 +116,9 @@ const process = [
 
 				<div data-section="content">
 					<p>{{ item.description }}</p>
-					<Button variant="secondary" as="a" href="/contact">{{ item.cta }}</Button>
+					<Button variant="secondary" as="a" href="/contact">{{
+						item.cta
+					}}</Button>
 				</div>
 			</li>
 		</ul>
@@ -115,9 +130,7 @@ const process = [
 				<p>The Process</p>
 			</div>
 
-			<h2 data-style="h3">
-				Assess. Plan. Deploy. Support.
-			</h2>
+			<h2 data-style="h3">Assess. Plan. Deploy. Support.</h2>
 		</div>
 
 		<div data-section="process-grid">
@@ -266,7 +279,7 @@ const process = [
 		@apply: text-tertiary bg-accent/10;
 	}
 
-	&>p {
+	& > p {
 		@apply: text-center max-w-lg;
 	}
 
@@ -278,7 +291,7 @@ const process = [
 		@apply: bk-col-full flex items-center flex-wrap justify-center gap-3 mt-5;
 
 		li {
-			@apply: px-4 py-3 ring-1.5 ring-accent bg-indigo-50;
+			@apply: px-4 py-3 ring-1.5 ring-accent bg-athens;
 			@apply: flex items-center gap-3;
 
 			span {
@@ -299,31 +312,31 @@ const process = [
 [data-section="services"] {
 	@apply: my-2 bk-col-root bk-container-[nav] scroll-m-t-9xl;
 
-	--gap: .5rem;
+	--gap: 0.5rem;
 
 	ul {
 		@apply: grid gap-2 bk-col-nav;
-		grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
 		li {
-			@apply: p-2 bg-neutral-200 grid relative hover:cursor-pointer;
+			@apply: p-2 bg-athens grid relative hover:cursor-pointer;
 
 			img {
 				@apply: h-full max-h-2xs_ w-full object-cover;
 			}
 
 			[data-section="img"] {
-				--color-1: theme('colors.neutral.200');
-				--color-2: theme('colors.card.3')
+				--color-1: theme("colors.athens");
+				--color-2: theme("colors.card.3");
 			}
 
 			[data-section="main"] {
 				@apply: grid gap-2;
-				grid-template-rows: minmax(0, theme('container.xs')) auto;
+				grid-template-rows: minmax(0, theme("container.xs")) auto;
 			}
 
 			[data-section="header"] {
-				@apply: bg-neutral-50 p-2;
+				@apply: bg-white p-2;
 
 				.link {
 					@apply: md:hidden underline mt-2 underline-offset-3 text-accent;

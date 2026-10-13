@@ -146,7 +146,7 @@ const heroBg = `url(${images.img27.src})`;
 }
 
 [data-section="why"] {
-	@apply: bk-col-nav bg-neutral-100 bk-container-[full,min] *:bk-col-full;
+	@apply: bk-col-nav bg-athens bk-container-[full,min] *:bk-col-full;
 	@apply: relative my-6 py-13 space-y-9! mb-6 scroll-m-t-5xl;
 
 	--size: calc(var(--spacing) * 4);
@@ -254,7 +254,7 @@ const heroBg = `url(${images.img27.src})`;
 	}
 
 	[data-section="content"] {
-		@apply: grid justify-items-center content-start text-center gap-3 px-3 py-9 bg-neutral-100;
+		@apply: grid justify-items-center content-start text-center gap-3 px-3 py-9 bg-athens;
 		h3 {
 			@apply: max-w-lg;
 		}

@@ -7,7 +7,7 @@
       <slot />
     </div>
   </div>
-  <div viewport="teleports"></div>
+  <div viewport="teleports" id="vteleports"></div>
   <div hidden :data-page-name="$pageContext.config.pageProps?.title" :data-page-pathname="$pageContext.urlPathname"></div>
 </template>
 

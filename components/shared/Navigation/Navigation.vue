@@ -7,9 +7,9 @@ const links = [
 		nested: [
 			{
 				href: "/about-us#leadership",
-				text: 'Leadership'
-			}
-		]
+				text: "Leadership",
+			},
+		],
 	},
 	{
 		href: "/products",
@@ -30,11 +30,15 @@ const links = [
 ];
 
 const context = usePageContext();
-const announcement = computed<({ text: string, url?: string } | undefined)>(() => {
-	const value = context.value.config.announcement;
-	if(typeof value === "function") return value() as any;
-	return value as unknown as any;
-});
+const announcement = computed<{ text: string; url?: string } | undefined>(
+	() => {
+		const value = context.value.config.announcement;
+		if (typeof value === "function") return value() as any;
+		return value as unknown as any;
+	},
+);
+
+const openDropdown = ref(false);
 
 useGsap(
 	({ gsap, breakpoints }) => {
@@ -87,7 +91,9 @@ useGsap(
 					"0 1.1rem 0 -1rem var(--colors-neutral-400)",
 					"0 1.35rem 0 -1rem var(--colors-white)",
 					// "0 0 1rem var(--colors-neutral-100)",
-				].join(", ")
+				].join(", "),
+				outline: "2px solid #ccc",
+				marginInline: "1rem",
 			},
 			"<",
 		);
@@ -105,7 +111,9 @@ useGsap(
 		<nav>
 			<div data-section="navigation-bar">
 				<div data-section="links">
-					<a href="/" data-section="logo"><img src="/logo.webp" class="max-sm:w-23" /></a>
+					<a href="/" data-section="logo"
+						><img src="/logo.webp" class="max-sm:w-23"
+					/></a>
 					<ul>
 						<li v-for="link in links" :key="link.href">
 							<template v-if="link.nested">
@@ -150,7 +158,12 @@ useGsap(
 					<Button variant="secondary" as="a" href="/contact">
 						Start a Conversation
 					</Button>
-					<Button variant="secondary" size="icon" data-type="menu">
+					<Button
+						variant="secondary"
+						size="icon"
+						data-type="menu"
+						@click="openDropdown = true"
+					>
 						<span
 							class="i-solar:hamburger-menu-outline text-2xl lg:text-3xl"
 						></span>
@@ -161,11 +174,13 @@ useGsap(
 	</header>
 	<div data-section="annoucement" v-if="announcement">
 		<p>
-			<a :href="announcement?.url"
-				> {{ announcement.text }}</a
-			>
+			<a :href="announcement?.url"> {{ announcement.text }}</a>
 		</p>
 	</div>
+
+	<Teleport v-if="openDropdown" to="#vteleports">
+		<NavMobile @close="openDropdown = false" />
+	</Teleport>
 </template>
 
 <style lang="scss" scoped>
@@ -173,7 +188,7 @@ header {
 	@apply: bk-col-root;
 
 	@screen lt-md {
-		// @apply: sticky top-0 z-10;
+		@apply: sticky top-0 z-10 shadow-sm;
 	}
 }
 

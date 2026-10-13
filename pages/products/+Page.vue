@@ -323,7 +323,7 @@ const principles = [
 	[data-section="items"] {
 		@apply: grid md:grid-cols-2 gap-4 py-4;
 		& > div {
-			@apply: bg-neutral-100 p-4;
+			@apply: bg-athens p-4;
 		}
 
 		[data-section="item-content"] {
@@ -450,7 +450,7 @@ const principles = [
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
 		li {
-			@apply: bg-neutral-100 p-4 relative;
+			@apply: bg-athens p-4 relative;
 
 			.spacer {
 				@apply: h-16;

@@ -419,7 +419,7 @@ section {
 	@apply: grid md:grid-cols-2 relative;
 
 	& > div:first-child {
-		@apply bg-neutral-100 py-13.75 px-4 flex flex-col justify-between items-start gap-4;
+		@apply bg-athens py-13.75 px-4 flex flex-col justify-between items-start gap-4;
 
 		&::before, &::after {
 			@apply: content-empty size-7 bg-white absolute;
@@ -461,7 +461,7 @@ section {
 	}
 }
 [data-section="our-attitude"] {
-	@apply: bk-col-nav bg-neutral-100 bk-container-[full,min] *:bk-col-full;
+	@apply: bk-col-nav bg-athens bk-container-[full,min] *:bk-col-full;
 	@apply: relative py-13 space-y-9! mb-6;
 
 	--size: calc(var(--spacing) * 4);
@@ -563,12 +563,16 @@ section {
 		@apply: grid gap-4;
 
 		li {
-			@apply: grid bg-neutral-100 p-4;
+			@apply: grid bg-athens p-4;
 			@apply: grid gap-6 md:gap-12;
+
+			[data-section="pill"] {
+				@apply: bg-neutral-50;
+			}
 		}
 
 		[data-section="img"] {
-			--color-1: theme('colors.neutral.100');
+			--color-1: theme('colors.athens');
 		}
 
 		img {
@@ -585,7 +589,7 @@ section {
 	}
 }
 [data-section="our-products"] {
-	@apply: py-32 bk-col-root lg:bk-col-nav bg-neutral-100;
+	@apply: py-32 bk-col-root lg:bk-col-nav bg-athens;
 	@apply: bk-container-[nav,full] relative;
 
 	--size: calc(var(--spacing) * 4);
@@ -741,7 +745,7 @@ section {
 	}
 
 	[data-section="container"] {
-		@apply: bg-neutral-100 bk-col-nav relative;
+		@apply: bg-athens bk-col-nav relative;
 		@apply: grid md:grid-cols-2 md:min-h-screen-sm_;
 
 		&::before, &::after {
@@ -798,7 +802,7 @@ section {
 	}
 }
 [data-section="our-north-american-branches"] {
-	@apply: bk-col-nav bg-neutral-100 bk-container-[full,max,min] *:bk-col-full;
+	@apply: bk-col-nav bg-athens bk-container-[full,max,min] *:bk-col-full;
 	@apply: relative py-13 space-y-9! mb-6;
 
 	--size: calc(var(--spacing) * 4);
@@ -901,7 +905,7 @@ section {
 }
 
 [data-section="mission-vision"] {
-	@apply: bk-col-root bg-neutral-100 py-6 bk-container-[nav];
+	@apply: bk-col-root bg-athens py-6 bk-container-[nav];
 
 	--size: calc(var(--spacing) * 4);
 	@screen md {
@@ -909,9 +913,9 @@ section {
 	}
 
 	[data-type="toggle"] {
-		@apply: flex items-center p-2 bg-neutral-200;
+		@apply: flex items-center p-2 bg-primary-light;
 		[data-section="pill"] {
-			@apply: cursor-pointer;
+			@apply: cursor-pointer bg-primary-light;
 			&[data-selected="true"] {
 				@apply: bg-accent text-white;
 			}

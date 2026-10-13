@@ -449,7 +449,7 @@ const onSubmit = handleSubmit(async (formValues, ctx) => {
 		@apply: grid gap-3 md:grid-cols-2 items-start;
 
 		&>div {
-			@apply: bg-neutral-100;
+			@apply: bg-athens;
 		}
 
 		[data-section="content"] {
@@ -548,7 +548,7 @@ const onSubmit = handleSubmit(async (formValues, ctx) => {
 }
 
 [data-section="why"] {
-	@apply: bk-col-nav bg-neutral-100 bk-container-[full,max,min] *:bk-col-full;
+	@apply: bk-col-nav bg-athens bk-container-[full,max,min] *:bk-col-full;
 	@apply: relative py-13 space-y-9! mb-6;
 
 	--size: calc(var(--spacing) * 4);
