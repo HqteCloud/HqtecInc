@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
 import * as z from 'zod'
 
 import { FormField } from '@/components/ui/form'
 import { images } from '@/lib/constants'
+
+const pageContext = usePageContext();
 
 const services = [
   { key: 'software', label: 'Software / Digital Product' },
@@ -69,11 +70,12 @@ const { handleSubmit, isSubmitting, values, setFieldValue } = useForm({
 })
 
 const onSubmit = handleSubmit(async (formValues, ctx) => {
+	const secrets = pageContext.value.config.secrets?.form
 	const target = ctx.evt?.target as HTMLFormElement;
 	const formData = new FormData(target);
 
 	// append accessKey
-	formData.append("access_key", "7405a701-d63a-46b9-b194-626ba90e4d64");
+	formData.append("access_key", secrets.access_key);
 
 	const selectedServiceLabels = formValues.services.map((key) => services.find((service) => service.key === key)?.label ?? key)
 
@@ -83,9 +85,9 @@ const onSubmit = handleSubmit(async (formValues, ctx) => {
 		submissionStatus.value = 'idle';
 		submissionMessage.value = '';
 
-		const response = await fetch("https://api.web3forms.com/submit", {
+		const response = await fetch(secrets.endpoint+secrets.resources.submit, {
 			method: "POST",
-			body: formData,
+			body: formData
 		});
 
 		const data = await response.json();

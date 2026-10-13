@@ -28,7 +28,7 @@ const articles = [
 		title: "The Future of DJing",
 		info: "Kingsley O. Mukoro’s continuing editorial series on professional DJing, audience experience, technology, and the business developing around the booth.",
 		subtext: "~ Editorial Series by Kingsley O. Mukoro",
-		url: undefined
+		url: "https://kingsleyomukoro.substack.com"
 	},
 ]
 </script>
@@ -68,7 +68,7 @@ const articles = [
 				<h3 data-style="h4">{{ article.title }}</h3>
 				<p>{{ article.info }}</p>
 
-				<Button variant="secondary">Read the Latest</Button>
+				<Button variant="secondary" as="a" :href="article.url">Read the Latest</Button>
 				<p v-if="article.subtext">{{ article.subtext }}</p>
 			</li>
 		</ul>

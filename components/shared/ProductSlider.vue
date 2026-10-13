@@ -39,28 +39,15 @@ const slides = [
 	},
 ];
 
-const container = ref<HTMLDivElement>();
-var scrollContainer: (dir: 'l' | 'r') => void | undefined
+function scrollContainer(dir: 'l' | 'r') {
+	const movement = dir === 'l' ? -1 : 1;
+	const container = document.querySelector('[data-section="slide-container"]');
 
-useGsap(({ gsap, elementKey }) => {
-	const containerKey = '[data-section="slide-container"]';
-	const slides = gsap.utils.toArray("[data-section='slides']");
-	scrollContainer = function(dir: "l" | "r") {
-		gsap.to(containerKey, {
-			scrollTo: {
-				x:
-					container.value?.getBoundingClientRect().width! *
-					(dir === "l" ? -1 : 1),
-			},
-			duration: 0.9,
-			ease: "power2.out",
-		});
-	}
-}, {
-	plugins: [
-		'ScrollToPlugin'
-	]
-});
+	container?.scrollTo({
+		left: container.getBoundingClientRect().width  * movement,
+		behavior: "smooth"
+	})
+}
 </script>
 
 <template>
@@ -95,7 +82,7 @@ useGsap(({ gsap, elementKey }) => {
 						<Button
 							as="a"
 							:href="btn.href"
-							:variant="btn.variant"
+							:variant="btn.variant as any"
 							v-for="btn in slide.buttons"
 							:key="btn.label"
 						>

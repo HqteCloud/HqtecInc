@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { images } from "@/lib/constants"
+import { breakpointsTailwind } from "@vueuse/core";
 
 const questions = [
 	"What is the organization trying to accomplish?",
@@ -29,6 +30,9 @@ const steps = [
 		img: images.img2
 	}
 ]
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const isDesktop = breakpoints.isGreater('md')
 
 const toggleMission = ref(true);
 const toggleFn = (val: boolean) => toggleMission.value = val;
@@ -70,6 +74,17 @@ const team = [
 		thumbnail: images.img29
 	},
 ]
+
+function scrollTeam(dir: "l" | "r") {
+	const movement = dir === 'l' ? -1 : 1;
+	const container = document.querySelector('ul[data-section="team-members"]');
+
+
+	container?.scrollBy({
+		left: (container.getBoundingClientRect().width / 2) * movement,
+		behavior: "smooth"
+	})
+}
 </script>
 
 <template>
@@ -100,7 +115,7 @@ const team = [
 			</div>
 
 			<div>
-			<Button as="a" href="#">See What We Do</Button>
+			<Button as="a" href="#our-attitude">See What We Do</Button>
 
 			</div>
 		</div>
@@ -109,7 +124,7 @@ const team = [
 		</div>
 	</section>
 
-	<section data-section="our-attitude">
+	<section data-section="our-attitude" id="our-attitude">
 		<h2 data-style="h3">It is easy to begin a technology conversation with a product: a new application, a new camera, a new network device, a new cloud service. <br/><br/> We prefer to begin one step earlier</h2>
 
 		<ul>
@@ -304,22 +319,54 @@ const team = [
 	<section data-section="mission-vision" id="leadership">
 
 		<div data-section="container" data-context="leadership">
-			<h3>Meet Leadership</h3>
+			<div>
+				<h3>Meet <br max-md:hidden /> Leadership</h3>
+				<div data-section="team-grid-buttons">
+					<Button variant="outline" size="sm" @click="scrollTeam('l')">
+						<span class="i-solar:alt-arrow-left-outline"></span>
+					</Button>
+					<Button variant="outline" size="sm" @click="scrollTeam('r')">
+						<span class="i-solar:alt-arrow-right-outline"></span>
+					</Button>
+				</div>
+			</div>
 
-			<ul>
+			<ul data-section="team-members">
 				<li v-for="item in team" :key="item.name">
-					<img :src="item.thumbnail.src" :alt="item.thumbnail.alt" />
+					<Drawer :swipe-direction="isDesktop ? 'right' : 'down'">
+					    <DrawerTrigger as-child>
+							<div data-section="team-member">
+								<img :src="item.thumbnail.src" :alt="item.thumbnail.alt" />
 
-					<div>
-						<h4>{{ item.name }}</h4>
-						<p>{{ item.position }}</p>
+								<div>
+									<h4>{{ item.name }}</h4>
+									<p>{{ item.position }}</p>
 
-						<Button variant="secondary" class="bio">Read Bio</Button>
-					</div>
+									<Button variant="secondary" class="bio">Read Bio</Button>
+								</div>
+							</div>
+					    </DrawerTrigger>
+					    <DrawerContent>
+					      <DrawerHeader>
+					        <DrawerTitle>{{ item.name }}</DrawerTitle>
+					        <DrawerDescription>Position: {{ item.position }}</DrawerDescription>
+					      </DrawerHeader>
+					      <div class="no-scrollbar overflow-y-auto px-4">
+					        <p class="mb-4 leading-normal">
+								{{ item.bio }}
+					        </p>
+					      </div>
 
-					<div class="bio-content">
-						<p>{{ item.bio }}</p>
-					</div>
+					      <DrawerFooter>
+					        <DrawerClose as-child>
+					          <Button variant="outline">
+					            Cancel
+					          </Button>
+					        </DrawerClose>
+					      </DrawerFooter>
+					    </DrawerContent>
+					  </Drawer>
+
 				</li>
 			</ul>
 		</div>
@@ -363,6 +410,10 @@ body:has([data-page-pathname="/about-us"]) {
 </style>
 
 <style lang="scss" scoped>
+section {
+	@apply: scroll-mt-5xl;
+}
+
 [data-section="hero"] {
 	@apply bk-col-nav;
 	@apply: grid md:grid-cols-2 relative;
@@ -409,7 +460,6 @@ body:has([data-page-pathname="/about-us"]) {
 		@apply: w-full h-full;
 	}
 }
-
 [data-section="our-attitude"] {
 	@apply: bk-col-nav bg-neutral-100 bk-container-[full,min] *:bk-col-full;
 	@apply: relative py-13 space-y-9! mb-6;
@@ -928,15 +978,35 @@ body:has([data-page-pathname="/about-us"]) {
 	}
 
 	[data-context="leadership"] {
-		@apply: flex items-start justify-between mb-12;
+		@apply: grid mb-12;
+
+		@screen md {
+			 grid-template-columns: clamp(12rem, 20vw, 20rem) 1fr;
+		}
+
+		&> div {
+			@apply: flex md:flex-col gap-2 justify-between;
+			button {
+				@apply: bg-white;
+			}
+
+			div {
+				@apply: hidden sm:block space-x-1!;
+			}
+		}
 
 		ul {
-			@apply: grid gap-x-3 gap-y-9 mt-4;
+			@apply: grid sm:flex gap-x-3 gap-y-6 overflow-x-scroll overflow-y-clip hide-scrollbar;
 
-			grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-
-			li {
+			li [data-section="team-member"] {
 				@apply: relative;
+				@apply: sm:min-w-xs sm:h-lg;
+				@apply: grid grid-rows-[1fr_auto];
+
+				img {
+					@apply: size-full object-cover;
+				}
+
 				div {
 					@apply: mt-3;
 

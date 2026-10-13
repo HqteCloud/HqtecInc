@@ -38,7 +38,7 @@ const announcement = computed<({ text: string, url?: string } | undefined)>(() =
 
 useGsap(
 	({ gsap, breakpoints }) => {
-		// if (breakpoints.isSmallerOrEqual("md")) return;
+		if (breakpoints.isSmallerOrEqual("md")) return;
 
 		const key = {
 			header: `[data-section="header-top-navigation"]`,
@@ -46,11 +46,11 @@ useGsap(
 			trigger: `[data-section="trigger"]`,
 		};
 
-		const trigger = breakpoints.isSmallerOrEqual("md") ? key.header : key.trigger
+		// const trigger = breakpoints.isSmallerOrEqual("md") ? key.header : key.trigger
 
 		const tl = gsap.timeline({
 			scrollTrigger: {
-				trigger: trigger,
+				trigger: key.trigger,
 				start: "bottom top",
 				toggleActions: "play none none reverse",
 				onEnter: () => {},

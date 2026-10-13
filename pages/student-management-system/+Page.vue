@@ -22,7 +22,7 @@
 				</div>
 
 				<div>
-					<Button>Explore the System</Button>
+					<Button as="a" href="#info">Explore the System</Button>
 				</div>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 		</div>
 	</section>
 
-	<section data-section="why">
+	<section data-section="why" id="info">
 		<div data-section="content">
 			<div data-section="pill">
 				<p>Why We Are Building It</p>
@@ -120,7 +120,7 @@ const heroBg = `url(${images.img27.src})`;
 		[data-section="content"] {
 			@apply: grid justify-items-center;
 
-			button {
+			[data-slot="button"] {
 				@apply: my-6 md:my-12.5;
 			}
 		}
@@ -147,7 +147,7 @@ const heroBg = `url(${images.img27.src})`;
 
 [data-section="why"] {
 	@apply: bk-col-nav bg-neutral-100 bk-container-[full,min] *:bk-col-full;
-	@apply: relative my-6 py-13 space-y-9! mb-6;
+	@apply: relative my-6 py-13 space-y-9! mb-6 scroll-m-t-5xl;
 
 	--size: calc(var(--spacing) * 4);
 	@screen md {

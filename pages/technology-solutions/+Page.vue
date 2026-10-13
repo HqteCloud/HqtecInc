@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { images, solutions } from "@/lib/constants";
 
-const heroBg = `url(${images.img19.src})`;
-
 const process = [
 	{
 		icon: "i-solar:magnifier-linear",
@@ -32,6 +30,9 @@ const process = [
 </script>
 
 <template>
+
+
+
 	<section data-section="hero">
 		<div data-section="content">
 			<div data-section="text">
@@ -44,8 +45,8 @@ const process = [
 			</div>
 
 			<div data-section="btn-group">
-				<Button>Explore Our Solutions</Button>
-				<Button variant="secondary">Discuss A Project</Button>
+				<Button as="a" href="#services">Explore Our Solutions</Button>
+				<Button variant="secondary" as="a" href="/contact">Discuss A Project</Button>
 
 				<div data-section="clip-art">
 					<div></div>
@@ -59,6 +60,8 @@ const process = [
 
 		<img :src="images.img4.src" :alt="images.img4.alt" />
 	</section>
+
+	<div data-section="trigger"></div>
 
 	<section data-section="solutions">
 		<span class="i-solar:users-group-two-rounded-line-duotone text-4xl mb-2 text-tertiary"></span>
@@ -83,7 +86,7 @@ const process = [
 		</ul>
 	</section>
 
-	<section data-section="services">
+	<section data-section="services" id="services">
 		<ul>
 			<li v-for="item in solutions" :key="item.solution" :id="item.solution.replaceAll(' ', '-').toLowerCase()">
 				<div data-section="main">
@@ -147,13 +150,10 @@ const process = [
 <style lang="scss" scoped>
 [data-section="hero"] {
 	@apply: bk-col-root bk-container-[nav] bg-repeat bg-contain relative z-0 max-md:[--gap:0];
-	// background-image: v-bind(heroBg);
-
 	--size: calc(var(--spacing) * 4);
 
 	img {
 		@apply: max-md:bk-col-nav md:absolute top-0 left-0 size-full object-cover -z-1;
-		// @apply: max-sm:h-xs;
 	}
 
 	[data-section="content"] {
@@ -178,7 +178,6 @@ const process = [
 			@apply: flex gap-2.5 flex-wrap mx-6 justify-center items-center;
 
 			[data-slot="button"] {
-				// @apply: w-full;
 				flex: 1 0 auto;
 			}
 		}
@@ -261,6 +260,7 @@ const process = [
 [data-section="solutions"] {
 	@apply: grid justify-items-center py-14 my-2 bg-card-3 bk-col-root mx-2 bk-container-[full] *:bk-col-content;
 
+	--full-val: 63rem;
 
 	[data-section="pill"] {
 		@apply: text-tertiary bg-accent/10;
@@ -297,7 +297,7 @@ const process = [
 }
 
 [data-section="services"] {
-	@apply: my-2 bk-col-root bk-container-[nav];
+	@apply: my-2 bk-col-root bk-container-[nav] scroll-m-t-9xl;
 
 	--gap: .5rem;
 

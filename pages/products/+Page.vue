@@ -74,8 +74,8 @@ const principles = [
 			</div>
 
 			<div data-section="btn-group">
-				<Button>Explore Our Products</Button>
-				<Button variant="secondary">Talk to our team</Button>
+				<Button as="a" href="#apps">Explore Our Products</Button>
+				<Button variant="secondary" as="a" href="/contact">Talk to our team</Button>
 
 				<div data-section="clip-art">
 					<div></div>
@@ -92,7 +92,7 @@ const principles = [
 
 	<div data-section="trigger"></div>
 
-	<section data-section="products">
+	<section data-section="products" id="apps">
 		<header data-section="header">
 			<div data-section="pill">
 				<p>Digital Products</p>

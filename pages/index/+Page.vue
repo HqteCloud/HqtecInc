@@ -147,7 +147,7 @@
 				November 2027, is being developed around the administrative and
 				academic work surrounding students.
 			</p>
-			<Button variant="secondary" as="a" href="/technology-solutions"
+			<Button variant="secondary" as="a" href="/products"
 				>Explore Products & Platforms</Button
 			>
 		</div>
