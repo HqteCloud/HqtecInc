@@ -70,7 +70,7 @@ useGsap(({ gsap }) => {
   );
 
   const buttons = panel.querySelectorAll<HTMLElement>(
-    '[data-section="cta-buttons"] button',
+    '[data-section="cta-buttons"] [data-slot="button"]',
   );
 
   gsap.set(panel, {
@@ -157,13 +157,15 @@ onBeforeUnmount(() => {
       </div>
 
       <div data-section="cta-buttons">
-        <Button @click="closeMenu">
+        <Button @click="closeMenu" as="a" href="/contact">
           Talk to Our Team
         </Button>
 
         <Button
           variant="secondary"
           @click="closeMenu"
+          as="a"
+          href="/technology-solutions"
         >
           Explore Solutions
         </Button>
