@@ -2,7 +2,7 @@ export default {
 	meta: [
 		{
 			property: "og:image",
-			content: "og-image.webp",
+			content: "og-image.png",
 		},
 		{
 			property: "og:image:width",
