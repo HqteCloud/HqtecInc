@@ -62,8 +62,8 @@ const team = [
 		thumbnail: images.img31
 	},
 	{
-		name: "Ejiro Mukoro",
-		position: 'Chief Operations Officer',
+		name: "Ejiroghene  Mukoro",
+		position: 'Director, Canadian Operations\nHQ TEC Technologies Canada Inc.',
 		bio: "Ejiro Mukoro supports HQ TEC, Inc.’s daily operations, project coordination, and delivery standards. He works across the team to align priorities, strengthen workflows, and keep projects focused on client needs and company objectives.\n\nWith a background in illustration and graphic design, Ejiro brings a creative perspective to technology development. His approach connects visual clarity with practical functionality, helping the team create solutions that are thoughtfully designed and easy to use. He emphasizes collaboration, attention to detail, and consistent execution.",
 		thumbnail: images.img30
 	},
@@ -340,7 +340,7 @@ function scrollTeam(dir: "l" | "r") {
 
 								<div>
 									<h4>{{ item.name }}</h4>
-									<p>{{ item.position }}</p>
+									<p class="position">{{ item.position }}</p>
 
 									<Button variant="secondary" class="bio">Read Bio</Button>
 								</div>
@@ -1000,7 +1000,7 @@ section {
 		}
 
 		ul {
-			@apply: grid sm:flex gap-x-3 gap-y-6 overflow-x-scroll overflow-y-clip hide-scrollbar;
+			@apply: grid sm:flex gap-x-3 gap-y-6 overflow-x-scroll overflow-y-clip hide-scrollbar pb-6;
 
 			li [data-section="team-member"] {
 				@apply: relative;
@@ -1009,6 +1009,10 @@ section {
 
 				img {
 					@apply: size-full object-cover;
+				}
+
+				.position {
+					@apply: whitespace-pre leading-5 mt-2;
 				}
 
 				div {
@@ -1024,17 +1028,6 @@ section {
 						@apply: opacity-100;
 					}
 				}
-
-				&:focus-within {
-					.bio-content {
-						@apply: z-1 h-auto;
-					}
-				}
-			}
-
-			.bio-content {
-				@apply: bg-white p-2 text-center transition-all duration-400;
-				@apply: absolute bottom-0 left-2 right-2 -z-1;
 			}
 		}
 	}

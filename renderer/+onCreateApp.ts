@@ -39,9 +39,13 @@ const onCreateApp = async (pageContext: PageContextWithApp) => {
 				return {};
 			}
 
+			const stylesheet = `
+				visibility: hidden;
+			`;
+
 			return {
 				"data-animate": binding.arg,
-				style: "visibility: hidden;",
+				style: binding.value && binding.value === 'visible' ? undefined : stylesheet,
 			};
 		},
 

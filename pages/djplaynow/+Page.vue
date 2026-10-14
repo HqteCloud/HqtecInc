@@ -32,7 +32,11 @@ const heroBg = `url(${images.img19.src})`;
 				</p>
 
 				<div data-section="btn-group">
-					<Button as="a" href="https://djplaynow.com" variant="secondary">
+					<Button
+						as="a"
+						href="https://djplaynow.com"
+						variant="secondary"
+					>
 						<img
 							:src="images.img15.src"
 							:alt="images.img15.alt"
@@ -42,9 +46,33 @@ const heroBg = `url(${images.img19.src})`;
 						<span>Visit DJ PlayNow</span>
 					</Button>
 
-					<Button as="a" href="https://djplaynow.com/download">
-						View on the App Store
-					</Button>
+					<div class="app-store-dropdown">
+						<Button
+							as="a"
+							class="dropdown-trigger"
+						>
+							View on the App Store
+						</Button>
+
+						<ul class="dropdown-menu">
+							<li>
+								<Link
+									href="https://apps.apple.com/us/app/djplaynow/id6748347560"
+									target="_blank"
+								>
+									Apple App Store
+								</Link>
+							</li>
+							<li>
+								<Link
+									href="https://play.google.com/store/apps/details?id=com.djplaynow.djplaynow&pli=1"
+									target="_blank"
+								>
+									Google Play Store
+								</Link>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 
@@ -87,7 +115,11 @@ const heroBg = `url(${images.img19.src})`;
 						decision where it belongs—with the DJ.
 					</p>
 
-					<Button as="a" href="https://djplaynow.com" variant="secondary">
+					<Button
+						as="a"
+						href="https://djplaynow.com"
+						variant="secondary"
+					>
 						<img
 							:src="images.img15.src"
 							:alt="images.img15.alt"
@@ -176,7 +208,7 @@ main {
 	--size: calc(var(--spacing) * 4);
 
 	[data-section="hero"] {
-		@apply: bk-col-root min-h-screen my-2 sm:mt-6 sm:mb-4 bk-container-[nav,min] relative z-0;
+		@apply: bk-col-root my-2 sm:mt-6 sm:mb-4 bk-container-[nav,min] relative z-0;
 		background-image: v-bind(heroBg);
 
 		&::before,
@@ -216,15 +248,16 @@ main {
 
 	[data-section="imgs"] {
 		@apply: md:bk-col-nav grid sm:grid-cols-2 grid-auto-rows-[1fr];
+		@apply: items-end;
 		@apply: divide-x-2! divide-neutral-50 divide-solid!;
 		@apply: bk-col-root;
 		img {
 			@apply: size-full max-h-lg object-contain;
 		}
 
-		& > div {
-			&:first-child {
-				@apply: max-md:pb-6;
+		div {
+			&:nth-child(1) {
+				@apply: pb-6;
 				img {
 					@apply: object-cc;
 				}
@@ -304,19 +337,25 @@ main {
 }
 
 [data-section="about-djplaynow"] {
-	@apply: bk-col-root bk-container-[nav] relative;
+	@apply: bk-col-root bk-container-[nav] relative z-0;
 	--gap: 0.5rem;
 
-	@screen md {
+	@screen sm {
 		--gap: 1rem;
 	}
 
+	&::before {
+		@apply: content-empty -z-2;
+		@apply: absolute top-0 bottom-0 left-[var(--gap)] right-[var(--gap)];
+		background-image: v-bind(heroBg);
+	}
+
 	[data-section="container"] {
-		@apply: grid md:grid-cols-2 gap-3 relative bk-col-nav;
+		@apply: grid md:grid-cols-2 gap-3 relative_ bk-col-nav;
 		& > div {
-			background-image: v-bind(heroBg);
 			@apply: p-4;
 
+			// background-image: v-bind(heroBg);
 			&:first-child {
 				@apply: py-12;
 			}
@@ -341,21 +380,34 @@ main {
 			}
 		}
 
-		&::before,
-		&::after {
+		@screen lt-md {
+			& > div:first-child {
+				@apply: border-b-[calc(var(--spacing)*3)] border-background;
+			}
+		}
+
+		@screen md {
+			&::before {
+				@apply: content-empty w-3 2xl:w-2 bg-background;
+				@apply: absolute top-0 bottom-0 left-50% translate-x--50%;
+			}
+		}
+
+		& > div:first-child::before,
+		& > div:first-child::after {
 			@apply: content-empty absolute top-0 size-4 bg-background;
 		}
 
-		&::before {
-			@apply: left-0;
+		& > div:first-child::before {
+			@apply: left-2 sm:left-4;
 		}
 
-		&::after {
-			@apply: right-0;
+		& > div:first-child::after {
+			@apply: right-2 sm:right-4;
 		}
 	}
 
-	&::before {
+	&::after {
 		@apply: content-empty absolute top--1px left-50% translate-x--50% h-4 w-10 bg-background z-1;
 	}
 }
@@ -363,6 +415,7 @@ main {
 [data-section="why-djplaynow"] {
 	@apply: bk-col-root bk-container-[nav] relative py-4;
 	--gap: 0.5rem;
+	--nav-val: 100vw;
 
 	@screen md {
 		--gap: 1rem;
@@ -383,5 +436,46 @@ main {
 	img {
 		@apply: absolute top-0 left-0 size-full object-cover -z-1;
 	}
+}
+
+.app-store-dropdown {
+  @apply relative inline-block;
+
+  .dropdown-trigger {
+    @apply inline-flex items-center justify-center;
+  }
+
+  .dropdown-menu {
+    @apply invisible pointer-events-none absolute left-0 top-full z-50;
+    @apply min-w-[200px] list-none;
+    @apply bg-athens p-1.5 opacity-0 shadow-lg;
+    @apply -translate-y-1.5 transition-all duration-200;
+
+    // Invisible bridge connecting the button to the dropdown
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      height: 8px;
+    }
+
+    li {
+      @apply m-0;
+    }
+
+    a {
+      @apply block rounded-md px-3 py-2.5 text-gray-900 no-underline;
+      @apply transition-colors duration-150 hover:bg-gray-100;
+      @apply focus-visible:outline-none focus-visible:ring-2;
+      @apply focus-visible:ring-blue-500;
+    }
+  }
+
+  &:hover .dropdown-menu,
+  &:focus-within .dropdown-menu {
+    @apply visible pointer-events-auto translate-y-0 opacity-100;
+  }
 }
 </style>
